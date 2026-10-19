@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Denisse Armijos</title>
+<meta name="description" content="Denisse Armijos — Abogada especializada en protección de datos personales, privacidad y tecnología.">
+<link rel="stylesheet" href="fonts.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/* Layout: estilo despacho editorial — cabecera blanca, hero a sangre en lavanda con la D y una línea que cruza la página,
+   títulos serif grandes con enlace en versalitas a la derecha, tarjetas planas de color y una banda de color a ancho completo. */
+:root {
+  --carbon: #111214;
+  --lavanda: #A196D1;
+  --lavanda-claro: #D4CAF0;
+  --crema: #F5F0ED;
+  --blanco: #FFFFFF;
+  --gris: #C4BFC7;
+  --tinta: #2A2830;        /* texto secundario */
+  --linea: #E4DEE6;
+
+  --display: "Bauer Bodoni", "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --body: "Arimo", "Helvetica Neue", Arial, sans-serif;
+
+  --max: 1180px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--blanco);
+  color: var(--carbon);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outline-offset: 3px; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+@media (max-width: 480px) {
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+}
+
+.kicker {
+  font-family: var(--body); font-size: 12px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.date { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+.date svg { width: 18px; height: 18px; flex: none; }
+
+/* ---------- Header ---------- */
+header.site {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--blanco);
+  border-bottom: 1px solid transparent;
+}
+header.site.scrolled { border-bottom-color: var(--linea); }
+header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 22px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
+.brand svg { width: 26px; height: 27px; color: var(--carbon); }
+.brand span { font-family: var(--display); font-weight: 500; font-size: 26px; letter-spacing: -.005em; line-height: 1; }
+nav.main { display: flex; gap: 28px; margin-left: auto; }
+nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; color: var(--carbon); padding-block: 4px; border-bottom: 1px solid transparent; transition: border-color .2s; }
+nav.main a:hover { border-bottom-color: var(--lavanda); }
+.tools { display: flex; align-items: center; gap: 14px; flex: none; }
+.lang {
+  font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: .16em;
+  background: var(--gris); color: var(--blanco); padding: 9px 14px; display: inline-flex; gap: 8px; align-items: center;
+  border: 0; cursor: default;
+}
+.menu-btn { display: none; background: none; border: 0; padding: 6px; cursor: pointer; color: var(--carbon); }
+.menu-btn svg { width: 30px; height: 22px; }
+.mobile-nav { display: none; }
+@media (max-width: 1100px) {
+  nav.main { display: none; }
+  .tools { margin-left: auto; }
+  .menu-btn { display: block; }
+  .mobile-nav { border-top: 1px solid var(--linea); }
+  .mobile-nav.open { display: block; }
+  .mobile-nav .wrap { display: grid; gap: 4px; padding-block: 12px 24px; }
+  .mobile-nav a { font-family: var(--display); font-size: 24px; text-decoration: none; padding-block: 6px; }
+  .brand span { font-size: 22px; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden; color: var(--blanco);
+  background:
+    radial-gradient(60% 80% at 82% 70%, rgba(212,202,240,.95) 0%, rgba(212,202,240,0) 60%),
+    radial-gradient(45% 60% at 65% 25%, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(70% 90% at 10% 100%, rgba(80,64,150,.55) 0%, rgba(80,64,150,0) 65%),
+    linear-gradient(120deg, #8F82C6 0%, #A196D1 45%, #B9AEE0 100%);
+}
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; pointer-events: none; }
+.hero .wrap { position: relative; padding-block: 72px 0; min-height: 600px; display: flex; flex-direction: column; }
+.hero h1 {
+  font-family: var(--display); font-weight: 500; letter-spacing: -.015em;
+  font-size: clamp(46px, 7.4vw, 96px); line-height: .98; margin: 0; max-width: 13ch; text-wrap: balance;
+}
+.hero h1 em { font-style: italic; }
+.hero .sub { margin: 28px 0 0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; color: rgba(255,255,255,.92); }
+.signature { margin-top: auto; position: relative; height: 170px; }
+.signature svg.d { position: absolute; left: 0; bottom: 48px; width: 96px; height: 100px; color: var(--blanco); }
+.signature .rule { position: absolute; left: 110px; right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); bottom: 48px; height: 9px; background: var(--blanco); }
+@media (max-width: 640px) {
+  .hero .wrap { min-height: 520px; padding-block: 48px 0; }
+  .signature { height: 130px; }
+  .signature svg.d { width: 64px; height: 66px; bottom: 36px; }
+  .signature .rule { left: 74px; height: 6px; bottom: 36px; }
+}
+
+/* ---------- Section heads ---------- */
+section { scroll-margin-top: 90px; }
+.sec { padding-block: 104px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+.sec-head h2 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+.more svg { width: 28px; height: 14px; transition: transform .2s; }
+.more:hover svg { transform: translateX(4px); }
+@media (max-width: 640px) { .sec { padding-block: 72px; } .sec-head { margin-bottom: 36px; } }
+
+/* ---------- Perfil ---------- */
+.perfil { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 72px; align-items: start; }
+.perfil .role { margin: 0 0 28px; color: var(--tinta); }
+.perfil .quote { font-family: var(--display); font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 0 0 32px; text-wrap: balance; }
+.perfil .quote em { color: #7A6DB8; }
+.perfil p { max-width: 62ch; margin: 0 0 18px; }
+.perfil p.muted { color: var(--tinta); }
+.portrait { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; background: var(--crema); position: relative; display: grid; place-items: center; }
+.portrait svg { width: 34%; height: auto; color: var(--carbon); }
+.portrait figcaption { position: absolute; left: 20px; bottom: 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--tinta); }
+.degree { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--linea); }
+.degree h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.3; margin: 10px 0 6px; }
+.degree p { margin: 0; color: var(--tinta); font-size: 15px; }
+@media (max-width: 860px) { .perfil { grid-template-columns: 1fr; gap: 48px; } .portrait { max-width: 380px; } }
+
+/* ---------- Tarjetas de color ---------- */
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.card { padding: 32px 30px 30px; display: flex; flex-direction: column; gap: 14px; min-height: 230px; min-width: 0; background: var(--lavanda-claro); }
+.card.c2 { background: var(--crema); }
+.card.c3 { background: var(--lavanda); }
+.card h3 { font-family: var(--display); font-weight: 500; font-size: 25px; line-height: 1.18; margin: 0; text-wrap: balance; }
+.card p { margin: auto 0 0; font-size: 15px; line-height: 1.55; color: var(--tinta); }
+.card.c3 p { color: var(--carbon); }
+@media (max-width: 1080px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; gap: 16px; } .card { min-height: 0; } }
+
+/* ---------- Publicaciones ---------- */
+.feat { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 56px; }
+.lead-story { text-decoration: none; display: grid; gap: 22px; align-content: start; }
+.lead-art {
+  aspect-ratio: 4 / 3; max-width: 100%; background: var(--carbon); position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; padding: 36px;
+}
+.lead-art .big-d { position: absolute; right: -6%; top: -10%; width: 72%; height: auto; color: #1E1F24; }
+.lead-art .art-rule { position: absolute; left: 0; right: 0; top: 58%; height: 6px; background: var(--lavanda); }
+.lead-art span { position: relative; font-family: var(--display); font-style: italic; color: var(--crema); font-size: clamp(22px, 2.8vw, 34px); line-height: 1.15; max-width: 16ch; }
+.lead-story .kicker { color: #6A5DAA; }
+.lead-story h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.lead-story p { margin: 0; color: var(--tinta); max-width: 58ch; }
+.side-list { display: grid; gap: 0; align-content: start; }
+.side-item { padding-block: 26px; border-top: 1px solid var(--linea); display: grid; gap: 10px; }
+.side-item:first-child { border-top: 0; padding-top: 0; }
+.side-item .kicker { color: #6A5DAA; }
+.side-item h3 { font-family: var(--display); font-weight: 500; font-size: 24px; line-height: 1.22; margin: 0; text-wrap: balance; }
+@media (max-width: 900px) { .feat { grid-template-columns: 1fr; gap: 40px; } .side-item:first-child { border-top: 1px solid var(--linea); padding-top: 26px; } }
+
+
+/* ---------- Observatorio ---------- */
+.obs-intro { max-width: 62ch; margin: -24px 0 36px; color: var(--tinta); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.chip { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 10px 16px; border: 1px solid var(--carbon); background: var(--blanco); color: var(--carbon); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--carbon); color: var(--blanco); }
+.obs-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.ficha { background: var(--crema); padding: 40px; display: grid; gap: 22px; min-width: 0; }
+.ficha-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ficha-top .kicker { color: #6A5DAA; }
+.badge { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--tinta); color: var(--tinta); padding: 5px 10px; }
+.ficha h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.ficha dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); border-top: 1px solid rgba(17,18,20,.14); }
+.ficha dt, .ficha dd { padding: 13px 0; border-bottom: 1px solid rgba(17,18,20,.14); margin: 0; }
+.ficha dt { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); padding-right: 28px; padding-top: 15px; }
+.ficha dd { font-size: 16px; }
+.ficha .ecuador { background: var(--lavanda-claro); padding: 24px 26px; }
+.ficha .ecuador .kicker { display: block; margin-bottom: 8px; }
+.ficha .ecuador p { margin: 0; font-family: var(--display); font-size: 21px; line-height: 1.35; }
+.obs-list { display: grid; gap: 28px; min-width: 0; }
+.obs-card { border-top: 2px solid var(--carbon); padding-top: 18px; display: grid; gap: 8px; }
+.obs-card .kicker { color: #6A5DAA; }
+.obs-card h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.25; margin: 0; }
+.obs-card p { margin: 0; font-size: 15px; color: var(--tinta); }
+.obs-empty { color: var(--tinta); font-style: italic; }
+@media (max-width: 900px) { .obs-grid { grid-template-columns: 1fr; } .ficha { padding: 28px 22px; } }
+@media (max-width: 520px) { .ficha dl { grid-template-columns: 1fr; } .ficha dt { padding-bottom: 0; border-bottom: 0; } }
+
+/* ---------- Banda de color ---------- */
+.band { background: var(--lavanda-claro); }
+.band-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.tfm { background: var(--blanco); padding: 44px; display: grid; gap: 18px; }
+.tfm .kicker { color: #6A5DAA; }
+.tfm h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3vw, 38px); line-height: 1.12; margin: 0; text-wrap: balance; }
+.tfm p { margin: 0; color: var(--tinta); max-width: 56ch; }
+.interest { display: grid; gap: 0; }
+.interest div { padding-block: 20px; border-bottom: 1px solid rgba(17,18,20,.14); }
+.interest div:first-child { padding-top: 0; }
+.interest .kicker { display: block; margin-bottom: 4px; }
+.interest span.t { font-family: var(--display); font-size: 23px; line-height: 1.25; }
+@media (max-width: 900px) { .band-grid { grid-template-columns: 1fr; gap: 48px; } .tfm { padding: 28px 24px; } }
+
+/* ---------- Método ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; counter-reset: s; }
+.steps li { counter-increment: s; border-top: 2px solid var(--carbon); padding-top: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-size: 12px; font-weight: 600; letter-spacing: .16em; color: #6A5DAA; font-variant-numeric: tabular-nums; }
+.steps h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; margin: 0; }
+.steps p { margin: 0; font-size: 15px; color: var(--tinta); }
+@media (max-width: 1000px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* ---------- Contacto ---------- */
+.contact { background: var(--carbon); color: var(--crema); }
+.contact .sec-head h2 { max-width: 16ch; }
+.contact .lead { color: var(--gris); max-width: 54ch; margin: -24px 0 48px; }
+.channels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 860px; }
+.channel { border-top: 1px solid rgba(245,240,237,.25); padding-top: 20px; display: grid; gap: 6px; text-decoration: none; min-width: 0; }
+.channel .kicker { color: var(--lavanda); }
+.channel span { font-family: var(--display); font-size: 26px; overflow-wrap: anywhere; }
+a.channel:hover span { color: var(--lavanda-claro); }
+@media (max-width: 600px) { .channels { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+footer { background: var(--crema); }
+footer .top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding-block: 72px 56px; }
+footer .brand span { font-size: 30px; }
+.totop { background: var(--carbon); color: var(--blanco); text-decoration: none; border-radius: 999px; padding: 13px 26px; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; display: inline-flex; gap: 12px; align-items: center; }
+.totop svg { width: 12px; height: 12px; }
+.foot-nav { display: grid; grid-template-columns: repeat(3, minmax(0, max-content)); gap: 12px 72px; padding-bottom: 64px; }
+.foot-nav a { font-family: var(--display); font-size: 24px; text-decoration: none; }
+.foot-nav a:hover { color: #6A5DAA; }
+.legal { border-top: 1px solid var(--linea); padding-block: 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+@media (max-width: 640px) { .foot-nav { grid-template-columns: 1fr 1fr; gap: 10px 32px; } .foot-nav a { font-size: 21px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-d" viewBox="0 0 1200 1232">
+    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
+    <rect x="845" y="1123" width="349.3" height="106.2" fill="#A196D1"/>
+  </symbol>
+  <symbol id="d-only" viewBox="0 0 842 1225">
+    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="cal" viewBox="0 0 18 18"><rect x="1.5" y="3" width="15" height="13" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 7h15M5.5 1v4M12.5 1v4" stroke="currentColor" stroke-width="1.3"/></symbol>
+</svg>
+
+<header class="site" id="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Denisse Armijos, inicio">
+      <svg><use href="#logo-d"/></svg>
+      <span>Denisse Armijos</span>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#perfil">Perfil</a>
+      <a href="#especializacion">Especialización</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#observatorio">Observatorio</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="tools">
+      <span class="lang" title="Versión en inglés próximamente">ESP</span>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 30 22"><path d="M0 1h30M0 11h30M0 21h30" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
+    <div class="wrap">
+      <a href="#perfil">Perfil</a>
+      <a href="#especializacion">Especialización</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#observatorio">Observatorio</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-label="Presentación">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h1>No basta con cumplir; <em>hay que poder demostrarlo.</em></h1>
+      <p class="sub">Protección de datos, tecnología y gestión del riesgo, con rigor jurídico y enfoque práctico.</p>
+      <div class="signature" aria-hidden="true">
+        <svg class="d"><use href="#d-only"/></svg>
+        <div class="rule"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="perfil">
+    <div class="wrap perfil">
+      <div>
+        <p class="kicker" style="color:#6A5DAA;margin:0 0 18px">Abogada · Protección de Datos Personales, Privacidad y Tecnología</p>
+        <h2 class="sec-head" style="display:block;margin:0 0 28px"><span style="font-family:var(--display);font-weight:500;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-.01em">Denisse Armijos</span></h2>
+        <p class="quote">Conecto el derecho con la tecnología: la protección de datos como parte de la <em>gestión del riesgo, la gobernanza y la confianza digital.</em></p>
+        <p>Soy abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho de las tecnologías. Tengo experiencia en asesoría jurídica y consultoría, en proyectos de adecuación normativa y cumplimiento regulatorio para organizaciones del sector público y privado.</p>
+        <p class="muted">He participado en diagnósticos de cumplimiento, identificación de actividades de tratamiento, análisis y evaluación de riesgos, evaluaciones de impacto, elaboración de instrumentos jurídicos y políticas institucionales, y diseño de procedimientos para la gestión de datos personales. También he trabajado en la delimitación de responsabilidades entre los actores del tratamiento, la privacidad desde el diseño y por defecto, y la construcción de mecanismos de gobernanza y responsabilidad proactiva.</p>
+        <div class="degree">
+          <span class="kicker" style="color:#6A5DAA">Formación</span>
+          <h3>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Sociedad de la Información y Audiovisual</h3>
+          <p>Universidad Carlos III de Madrid, España</p>
+        </div>
+      </div>
+      <figure class="portrait">
+        <svg><use href="#logo-d"/></svg>
+        <figcaption>Fotografía próximamente</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="especializacion" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Áreas de especialización</h2>
+        <a class="more" href="#contacto">Consultas <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="kicker">Privacidad</span><h3>Protección de datos personales</h3><p>Análisis y asesoría sobre el tratamiento de datos personales.</p></article>
+        <article class="card c2"><span class="kicker">Ecuador</span><h3>Cumplimiento de la LOPDP</h3><p>Ley Orgánica de Protección de Datos Personales y normativa conexa.</p></article>
+        <article class="card"><span class="kicker">Tecnología</span><h3>Derecho de las tecnologías y telecomunicaciones</h3><p>Regulación de servicios digitales y entornos tecnológicos.</p></article>
+        <article class="card c3"><span class="kicker">Riesgo</span><h3>Gestión de riesgos legales</h3><p>Riesgos asociados al tratamiento de datos y su mitigación.</p></article>
+        <article class="card c2"><span class="kicker">Gobernanza</span><h3>Responsabilidad proactiva</h3><p>Roles, políticas y evidencias que demuestran el cumplimiento.</p></article>
+        <article class="card"><span class="kicker">EIPD</span><h3>Evaluaciones de impacto</h3><p>Evaluación de tratamientos de alto riesgo para los derechos de las personas.</p></article>
+        <article class="card c2"><span class="kicker">Obligaciones</span><h3>Responsables y encargados</h3><p>Obligaciones, contratos y distribución de responsabilidades.</p></article>
+        <article class="card"><span class="kicker">Diseño</span><h3>Privacidad desde el diseño y por defecto</h3><p>Garantías incorporadas en productos, procesos y proyectos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="publicaciones" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Publicaciones</h2>
+        <a class="more" href="#publicaciones">Todas las publicaciones <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="feat">
+        <article class="lead-story">
+          <div class="lead-art" aria-hidden="true">
+            <svg class="big-d"><use href="#d-only"/></svg>
+            <div class="art-rule"></div>
+            <span>El orden también es cumplimiento</span>
+          </div>
+          <span class="kicker">Transparencia · Guía práctica</span>
+          <h3>Políticas de privacidad: por qué el orden importa tanto como el contenido</h3>
+          <p>La ley dice qué información dar; la evidencia muestra cómo ordenarla para que alguien la entienda. Comparación entre dos modelos de política y un checklist para revisar la tuya.</p>
+          <span class="date"><svg><use href="#cal"/></svg>Próximamente</span>
+        </article>
+        <div class="side-list">
+          <article class="side-item"><span class="kicker">Análisis normativo</span><h3>Las resoluciones de la Superintendencia de Protección de Datos Personales</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
+          <article class="side-item"><span class="kicker">Guía práctica</span><h3>Cómo aplicar las obligaciones de protección de datos en tu organización</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
+          <article class="side-item"><span class="kicker">Derecho comparado</span><h3>La LOPDP frente al RGPD: convergencias y diferencias</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="observatorio" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Observatorio de autoridades</h2>
+        <a class="more" href="#observatorio">Todas las resoluciones <svg><use href="#arrow"/></svg></a>
+      </div>
+      <p class="obs-intro">Análisis de resoluciones de autoridades de protección de datos de Europa y América Latina, y lo que cada una enseña a las organizaciones en Ecuador.</p>
+      <div class="chips" role="group" aria-label="Filtrar por autoridad">
+        <button class="chip" id="f-todas" data-f="todas" aria-pressed="true">Todas</button>
+        <button class="chip" id="f-aepd" data-f="aepd" aria-pressed="false">AEPD · España</button>
+        <button class="chip" id="f-cnil" data-f="cnil" aria-pressed="false">CNIL · Francia</button>
+        <button class="chip" id="f-anpd" data-f="anpd" aria-pressed="false">ANPD · Brasil</button>
+        <button class="chip" id="f-garante" data-f="garante" aria-pressed="false">Garante · Italia</button>
+        <button class="chip" id="f-spdp" data-f="spdp" aria-pressed="false">SPDP · Ecuador</button>
+      </div>
+      <div class="obs-grid">
+        <article class="ficha" data-a="aepd">
+          <div class="ficha-top">
+            <span class="kicker">AEPD · España</span>
+            <span class="badge">Ficha de ejemplo</span>
+          </div>
+          <h3>[Título del análisis: el tema de la resolución en una frase]</h3>
+          <dl>
+            <dt>Resolución</dt><dd>[Número de procedimiento]</dd>
+            <dt>Fecha</dt><dd>[Fecha de la resolución]</dd>
+            <dt>Tema</dt><dd>[Videovigilancia, cookies, IA, brechas de seguridad…]</dd>
+            <dt>Hechos</dt><dd>[Qué ocurrió, en dos o tres líneas]</dd>
+            <dt>Infracción</dt><dd>[Artículos del RGPD aplicados]</dd>
+            <dt>Sanción</dt><dd>[Multa o medida impuesta]</dd>
+          </dl>
+          <div class="ecuador">
+            <span class="kicker">Qué significa para Ecuador</span>
+            <p>[El aprendizaje práctico: qué disposición de la LOPDP se relaciona y qué debería revisar hoy una organización ecuatoriana.]</p>
+          </div>
+        </article>
+        <div class="obs-list">
+          <article class="obs-card" data-a="cnil"><span class="kicker">CNIL · Francia</span><h3>Próximo análisis</h3><p>Resoluciones de la autoridad francesa de protección de datos.</p></article>
+          <article class="obs-card" data-a="anpd"><span class="kicker">ANPD · Brasil</span><h3>Próximo análisis</h3><p>Decisiones bajo la LGPD, la referencia regional más cercana.</p></article>
+          <article class="obs-card" data-a="garante"><span class="kicker">Garante · Italia</span><h3>Próximo análisis</h3><p>Una de las autoridades más activas en inteligencia artificial.</p></article>
+          <article class="obs-card" data-a="spdp"><span class="kicker">SPDP · Ecuador</span><h3>Próximo análisis</h3><p>Resoluciones de la Superintendencia de Protección de Datos Personales.</p></article>
+          <p class="obs-empty" id="obs-empty" hidden>Aún no hay análisis publicados de esta autoridad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="investigacion">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Investigación</h2>
+        <a class="more" href="#contacto">Colaboraciones académicas <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="band-grid">
+        <article class="tfm">
+          <span class="kicker">Trabajo de Fin de Máster · Universidad Carlos III de Madrid</span>
+          <h3>Desafíos jurídicos de la inteligencia artificial y la protección de datos: el caso Read.ai</h3>
+          <p>Análisis de los retos que plantean los asistentes de IA que graban, transcriben y resumen reuniones, a la luz de la normativa de protección de datos.</p>
+          <span class="date"><svg><use href="#cal"/></svg>Versión pública próximamente</span>
+        </article>
+        <div class="interest">
+          <div><span class="kicker">Inteligencia artificial</span><span class="t">Gobernanza algorítmica</span></div>
+          <div><span class="kicker">Seguridad de la información</span><span class="t">Ciberseguridad y seguridad informática</span></div>
+          <div><span class="kicker">Riesgo</span><span class="t">Gestión de riesgos tecnológicos</span></div>
+          <div><span class="kicker">Datos</span><span class="t">Análisis de datos</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Cómo trabajo</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Diagnóstico de cumplimiento</h3><p>Qué datos se tratan, con qué finalidad y bajo qué base de legitimación.</p></li>
+        <li><h3>Mapa de tratamientos</h3><p>Inventario de flujos de datos, sistemas, responsables y encargados.</p></li>
+        <li><h3>Riesgos y evaluación de impacto</h3><p>Valoración de riesgos para los derechos de las personas y medidas para mitigarlos.</p></li>
+        <li><h3>Instrumentos y procedimientos</h3><p>Políticas, cláusulas, contratos y procedimientos a la medida.</p></li>
+        <li><h3>Gobernanza y evidencia</h3><p>Roles, controles y registros que permiten demostrar el cumplimiento.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contacto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Hablemos de datos, riesgo y confianza digital.</h2>
+      </div>
+      <p class="lead">Abierta a colaboraciones profesionales y académicas, proyectos de consultoría y oportunidades en derecho digital, privacidad y ciberseguridad.</p>
+      <div class="channels">
+        <div class="channel"><span class="kicker">LinkedIn</span><span>Próximamente</span></div>
+        <div class="channel"><span class="kicker">Correo profesional</span><span>Próximamente</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#inicio"><svg><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
+      <a class="totop" href="#top">Volver arriba <svg viewBox="0 0 12 12"><path d="M1 8l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+    <nav class="foot-nav" aria-label="Pie de página">
+      <a href="#perfil">Perfil</a>
+      <a href="#especializacion">Especialización</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#observatorio">Observatorio</a>
+      <a href="#observatorio">Observatorio</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="legal">
+      <span>Este sitio no usa cookies ni herramientas de rastreo</span>
+      <span>© 2026 Denisse Armijos</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('header.site');
+  window.addEventListener('scroll', function () { header.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  var btn = document.getElementById('menu-btn'), nav = document.getElementById('mobile-nav');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+
+  // Filtro del Observatorio por autoridad
+  var chips = document.querySelectorAll('.chip'), items = document.querySelectorAll('[data-a]'), empty = document.getElementById('obs-empty');
+  chips.forEach(function (ch) {
+    ch.addEventListener('click', function () {
+      var f = ch.getAttribute('data-f'), shown = 0;
+      chips.forEach(function (o) { o.setAttribute('aria-pressed', o === ch ? 'true' : 'false'); });
+      items.forEach(function (it) {
+        var ok = f === 'todas' || it.getAttribute('data-a') === f;
+        it.hidden = !ok; if (ok) shown++;
+      });
+      empty.hidden = shown > 0;
+    });
+  });
+
+  // Campo de puntos: una retícula de datos que se desvanece hacia la izquierda, detrás del titular.
+  var c = document.getElementById('field'), ctx = c.getContext('2d');
+  function draw() {
+    var r = window.devicePixelRatio || 1, w = c.clientWidth, h = c.clientHeight;
+    c.width = w * r; c.height = h * r; ctx.setTransform(r, 0, 0, r, 0, 0); ctx.clearRect(0, 0, w, h);
+    var step = 22;
+    for (var y = step; y < h; y += step) {
+      for (var x = step; x < w; x += step) {
+        var t = x / w;
+        var wave = Math.sin(x * 0.012 + y * 0.018) * 0.5 + 0.5;
+        var a = Math.max(0, (t - 0.35)) * 1.3 * (0.35 + wave * 0.65);
+        if (a <= 0.02) continue;
+        ctx.fillStyle = 'rgba(255,255,255,' + Math.min(a, 0.9).toFixed(3) + ')';
+        var s = 1 + wave * 1.4;
+        ctx.fillRect(x, y, s, s);
+      }
+    }
+  }
+  draw();
+  window.addEventListener('resize', draw);
+})();
+</script>
+</body>
+</html>
