@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¿Tu política de privacidad realmente informa? · Denisse Armijos</title>
+<meta name="description" content="La diferencia entre publicar un documento y garantizar transparencia en el tratamiento de datos personales. Análisis de Denisse Armijos sobre la LOPDP, el enfoque por capas y el Legal Design.">
+<meta name="author" content="Denisse Armijos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tu página web tiene una política de privacidad. ¿Pero realmente informa?">
+<meta property="og:description" content="La diferencia entre publicar un documento y garantizar transparencia en el tratamiento de datos personales.">
+<meta property="article:published_time" content="2026-10-21">
+<link rel="stylesheet" href="../fonts.css">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+/* Layout: página de artículo — cabecera del sitio, portada en carbón con la línea lavanda,
+   cuerpo de lectura a ~68 caracteres con índice lateral fijo en escritorio. */
+:root {
+  --carbon: #111214;
+  --lavanda: #A196D1;
+  --lavanda-claro: #D4CAF0;
+  --crema: #F5F0ED;
+  --blanco: #FFFFFF;
+  --gris: #C4BFC7;
+  --tinta: #2A2830;
+  --linea: #E4DEE6;
+  --acento: #6A5DAA;
+
+  --display: "Bauer Bodoni", "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --body: "Arimo", "Helvetica Neue", Arial, sans-serif;
+  --max: 1180px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--blanco); color: var(--carbon); font-family: var(--body); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+@media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } body { font-size: 17px; } }
+.kicker { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+
+/* Cabecera */
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--blanco); border-bottom: 1px solid var(--linea); }
+header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 22px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
+.brand svg { width: 26px; height: 27px; color: var(--carbon); }
+.brand span { font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1; }
+nav.main { display: flex; gap: 28px; margin-left: auto; }
+nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
+nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda); }
+.back { display: none; margin-left: auto; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
+@media (max-width: 1100px) { nav.main { display: none; } .back { display: inline-flex; } .brand span { font-size: 22px; } }
+
+/* Portada del artículo */
+.art-hero { background: var(--carbon); color: var(--crema); position: relative; overflow: hidden; }
+.art-hero .wrap { padding-block: 80px 96px; position: relative; }
+.art-hero .kicker { color: var(--lavanda); display: flex; gap: 14px; flex-wrap: wrap; }
+.art-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(38px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -.01em; margin: 24px 0 24px; max-width: 18ch; text-wrap: balance; }
+.art-hero h1 em { color: var(--lavanda-claro); }
+.art-hero .dek { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; color: var(--gris); max-width: 52ch; margin: 0 0 40px; }
+.byline { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; color: var(--gris); }
+.byline strong { color: var(--crema); font-weight: 600; }
+.art-hero .rule { position: absolute; left: 0; right: 0; bottom: 36px; height: 6px; background: var(--lavanda); }
+@media (max-width: 640px) { .art-hero .wrap { padding-block: 56px 80px; } .art-hero .rule { bottom: 28px; height: 4px; } }
+
+/* Cuerpo */
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 72px; padding-block: 72px 96px; }
+.toc { position: sticky; top: 110px; align-self: start; }
+.toc .kicker { color: var(--acento); display: block; margin-bottom: 16px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 1px solid var(--linea); }
+.toc a { display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 2px solid transparent; font-size: 14px; line-height: 1.4; text-decoration: none; color: var(--tinta); }
+.toc a:hover { color: var(--carbon); }
+.toc a.active { border-left-color: var(--lavanda); color: var(--carbon); font-weight: 600; }
+@media (max-width: 980px) { .layout { grid-template-columns: 1fr; gap: 0; padding-block: 48px 72px; } .toc { display: none; } }
+
+.prose { max-width: 68ch; min-width: 0; }
+.prose > p { margin: 0 0 22px; }
+.prose h2 { font-family: var(--display); font-weight: 500; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; letter-spacing: -.005em; margin: 64px 0 22px; text-wrap: balance; scroll-margin-top: 110px; }
+.prose h2:first-child { margin-top: 0; }
+.prose .lead { font-family: var(--display); font-size: clamp(22px, 2.2vw, 26px); line-height: 1.45; }
+.prose ul { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 0; border-top: 1px solid var(--linea); }
+.prose ul li { padding: 14px 0 14px 28px; border-bottom: 1px solid var(--linea); position: relative; }
+.prose ul li::before { content: ""; position: absolute; left: 4px; top: 25px; width: 7px; height: 7px; background: var(--lavanda); transform: rotate(45deg); }
+.prose .note { background: var(--crema); padding: 22px 26px; margin: 0 0 28px; font-size: 16px; }
+.prose .note strong { display: block; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--acento); margin-bottom: 6px; }
+blockquote.pull { margin: 48px 0; padding: 28px 0; border-top: 2px solid var(--carbon); border-bottom: 1px solid var(--linea); font-family: var(--display); font-size: clamp(26px, 3vw, 34px); line-height: 1.25; text-wrap: balance; }
+blockquote.pull em { color: var(--acento); }
+
+/* Figura: capas */
+figure.layers { margin: 36px 0 40px; }
+.layers-grid { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1.25fr); align-items: stretch; }
+.layer { padding: 24px 24px 22px; display: grid; gap: 10px; align-content: start; }
+.layer.l1 { background: var(--lavanda-claro); }
+.layer.l2 { background: var(--crema); }
+.layer h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; margin: 0; }
+.layer .kicker { color: var(--acento); }
+.layer ul.mini { list-style: none; margin: 4px 0 0; padding: 0; border: 0; display: grid; gap: 6px; font-size: 15px; line-height: 1.45; }
+.layer ul.mini li { padding: 0 0 0 16px; border: 0; }
+.layer ul.mini li::before { width: 5px; height: 5px; top: 9px; left: 0; }
+.arrow { display: grid; place-items: center; color: var(--carbon); }
+.arrow svg { width: 28px; height: 14px; }
+figure.layers figcaption { font-size: 14px; color: var(--tinta); margin-top: 12px; }
+@media (max-width: 640px) { .layers-grid { grid-template-columns: 1fr; } .arrow { height: 36px; transform: rotate(90deg); } }
+
+/* Referencias y cierre */
+.refs { margin-top: 72px; padding-top: 28px; border-top: 2px solid var(--carbon); }
+.refs h2 { margin-top: 0; font-size: 26px; }
+.refs ol { margin: 0; padding-left: 22px; display: grid; gap: 12px; font-size: 15px; line-height: 1.55; }
+.refs a { color: var(--acento); overflow-wrap: anywhere; }
+.disclaimer { margin-top: 32px; font-size: 14px; font-style: italic; color: var(--tinta); }
+.author { margin-top: 56px; background: var(--crema); padding: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; }
+.author svg { width: 48px; height: 50px; color: var(--carbon); }
+.author p { margin: 0; font-size: 15px; color: var(--tinta); }
+.author strong { font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--carbon); display: block; }
+.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; margin-top: 40px; }
+.more svg { width: 28px; height: 14px; }
+
+footer { background: var(--crema); }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-block: 40px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--carbon); }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-d" viewBox="0 0 1200 1232">
+    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
+    <rect x="845" y="1123" width="349.3" height="106.2" fill="#A196D1"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Denisse Armijos, inicio">
+      <svg><use href="#logo-d"/></svg>
+      <span>Denisse Armijos</span>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="../#perfil">Perfil</a>
+      <a href="../#especializacion">Especialización</a>
+      <a href="../#publicaciones" aria-current="page">Publicaciones</a>
+      <a href="../#observatorio">Observatorio</a>
+      <a href="../#investigacion">Investigación</a>
+      <a href="../#contacto">Contacto</a>
+    </nav>
+    <a class="back" href="../#publicaciones">← Publicaciones</a>
+  </div>
+</header>
+
+<main>
+  <section class="art-hero">
+    <div class="wrap">
+      <p class="kicker"><span>Transparencia</span><span>·</span><span>Análisis y opinión</span></p>
+      <h1>Tu página web tiene una política de privacidad. <em>¿Pero realmente informa?</em></h1>
+      <p class="dek">La diferencia entre publicar un documento y garantizar transparencia en el tratamiento de datos personales.</p>
+      <div class="byline">
+        <span>Por <strong>Denisse Armijos</strong></span>
+        <span>Protección de Datos Personales y Privacidad Digital</span>
+        <span><time datetime="2026-10-21">21 de octubre de 2026</time></span>
+        <span>8 min de lectura</span>
+      </div>
+    </div>
+    <div class="rule" aria-hidden="true"></div>
+  </section>
+
+  <div class="wrap layout">
+    <aside class="toc" aria-label="En este artículo">
+      <span class="kicker">En este artículo</span>
+      <ol>
+        <li><a href="#suficiente">¿Publicar una política es suficiente?</a></li>
+        <li><a href="#politica-aviso">Política y aviso de privacidad</a></li>
+        <li><a href="#lopdp">Lo que exige la normativa ecuatoriana</a></li>
+        <li><a href="#capas">El enfoque por capas</a></li>
+        <li><a href="#legal-design">Legal Design</a></li>
+        <li><a href="#consentimiento">Informar no es obtener consentimiento</a></li>
+        <li><a href="#cumplimiento">De la documentación al cumplimiento</a></li>
+        <li><a href="#reflexion">Reflexión final</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+      </ol>
+    </aside>
+
+    <article class="prose">
+      <h2 id="suficiente">¿Publicar una política de privacidad es suficiente?</h2>
+      <p class="lead">Es habitual encontrar sitios web que incorporan una sección denominada «Política de Privacidad» en el pie de página. En ocasiones, el documento contiene numerosas referencias legales, reproduce disposiciones normativas y utiliza expresiones que difícilmente comprendería una persona sin conocimientos jurídicos.</p>
+      <p>Desde una perspectiva formal, podría parecer que la organización está cumpliendo con sus obligaciones de protección de datos personales. Sin embargo, surge una pregunta fundamental: ¿el usuario comprende realmente qué sucede con su información cuando utiliza ese sitio web?</p>
+      <p>Esta distinción es especialmente relevante porque el cumplimiento normativo no se agota en la existencia de documentos. También exige que la información proporcionada sea coherente con las actividades de tratamiento efectivamente realizadas por la organización.</p>
+      <p>La transparencia, por tanto, no consiste únicamente en publicar información, sino en comunicarla de manera que pueda ser comprendida y utilizada por sus destinatarios.</p>
+
+      <h2 id="politica-aviso">Política de privacidad y aviso de privacidad: ¿son lo mismo?</h2>
+      <p>Aunque ambos términos suelen emplearse indistintamente, resulta útil diferenciarlos desde una perspectiva funcional.</p>
+      <p>Una política de protección de datos personales puede establecer los principios, responsabilidades y directrices que orientan la gestión de información personal dentro de una organización. Dependiendo de su finalidad, puede tener carácter interno, externo o incorporar disposiciones destinadas a ambos ámbitos.</p>
+      <p>Por su parte, un aviso de privacidad tiene una función esencialmente informativa: comunicar al titular, de manera concreta y oportuna, las condiciones bajo las cuales se tratarán sus datos personales.</p>
+      <p>Esta distinción no significa que todo documento publicado en una página web deba denominarse obligatoriamente «Aviso de Privacidad». Lo jurídicamente relevante es su contenido, accesibilidad, oportunidad y correspondencia con los tratamientos realizados.</p>
+      <p>Por ejemplo, una empresa puede contar con una política interna que regule las responsabilidades de sus colaboradores y, simultáneamente, publicar una política de privacidad web que explique a visitantes y clientes cómo utiliza sus datos personales.</p>
+      <p>Asimismo, puede incorporar avisos específicos en formularios de contacto, suscripciones comerciales u otros puntos de recolección.</p>
+      <p>En consecuencia, el desafío no está en elegir una denominación, sino en construir una arquitectura documental coherente que permita informar adecuadamente al titular sin trasladarle toda la complejidad jurídica y operativa de la organización.</p>
+
+      <h2 id="lopdp">Lo que realmente exige la normativa ecuatoriana</h2>
+      <p>La Ley Orgánica de Protección de Datos Personales (LOPDP) reconoce la transparencia como uno de los principios que deben observarse durante el tratamiento de datos personales.</p>
+      <p>En particular, el artículo 12 desarrolla el derecho a la información e identifica los aspectos que deben comunicarse al titular, según corresponda, entre ellos:</p>
+      <ul>
+        <li>Las finalidades del tratamiento y sus bases de legitimación.</li>
+        <li>La identidad y los datos de contacto del responsable y, cuando corresponda, del delegado de protección de datos personales.</li>
+        <li>Los plazos de conservación de la información.</li>
+        <li>Las transferencias o comunicaciones nacionales e internacionales de datos personales.</li>
+        <li>Los derechos reconocidos al titular y los mecanismos para ejercerlos.</li>
+        <li>La existencia de decisiones automatizadas y elaboración de perfiles, cuando se realicen.</li>
+      </ul>
+      <p>La disposición también exige que la información se comunique de manera expresa, inteligible, concisa y sin barreras técnicas.</p>
+      <p>Por tanto, incorporar un enlace a una política de privacidad no garantiza, por sí mismo, el cumplimiento del deber de información. Es necesario verificar si su contenido responde a las condiciones reales del tratamiento y si la información llega al titular oportunamente.</p>
+      <p>Una política puede estar jurídicamente bien redactada y, sin embargo, resultar insuficiente si omite determinadas operaciones, utiliza finalidades genéricas o contradice las prácticas de la organización.</p>
+
+      <h2 id="capas">El enfoque por capas: comunicar sin sacrificar información</h2>
+      <p>Uno de los principales desafíos de la transparencia es proporcionar información jurídicamente completa sin convertirla en un documento difícil de consultar.</p>
+      <p>Frente a esta necesidad, autoridades europeas como la Agencia Española de Protección de Datos han recomendado un modelo de información por capas o niveles.</p>
+      <p>Este enfoque permite presentar una primera capa con información esencial, accesible en el momento de la recolección, y una segunda capa que desarrolla detalladamente las condiciones del tratamiento.</p>
+      <p>Pensemos en un formulario de contacto de una página web.</p>
+      <p>En lugar de limitarse a incorporar un enlace poco visible a un documento extenso, el formulario podría presentar una explicación breve sobre quién recopila la información, con qué finalidad, cuál es la base jurídica aplicable y dónde consultar los derechos y las condiciones adicionales.</p>
+      <p>El enlace permitiría acceder a la información completa, incluidos los plazos de conservación, las comunicaciones de datos y los mecanismos para presentar solicitudes o reclamaciones.</p>
+
+      <figure class="layers">
+        <div class="layers-grid">
+          <div class="layer l1">
+            <span class="kicker">Primera capa</span>
+            <h3>En el formulario de contacto</h3>
+            <ul class="mini">
+              <li>Quién recopila la información</li>
+              <li>Con qué finalidad</li>
+              <li>Cuál es la base jurídica aplicable</li>
+              <li>Dónde consultar los derechos y las condiciones adicionales</li>
+            </ul>
+          </div>
+          <div class="arrow" aria-hidden="true"><svg><use href="#arrow"/></svg></div>
+          <div class="layer l2">
+            <span class="kicker">Segunda capa</span>
+            <h3>En la política completa, a un clic</h3>
+            <ul class="mini">
+              <li>Plazos de conservación</li>
+              <li>Comunicaciones de datos</li>
+              <li>Mecanismos para presentar solicitudes o reclamaciones</li>
+            </ul>
+          </div>
+        </div>
+        <figcaption>El modelo de información por capas aplicado a un formulario de contacto.</figcaption>
+      </figure>
+
+      <p>La ventaja de este modelo no consiste en reducir las obligaciones legales, sino en organizar su comunicación.</p>
+      <p>En Ecuador, el enfoque por capas puede utilizarse como una buena práctica de implementación del principio de transparencia y del derecho a la información, sin confundir esta metodología con una estructura documental impuesta de manera específica por la LOPDP.</p>
+
+      <h2 id="legal-design">Legal Design: cuando la claridad también forma parte del cumplimiento</h2>
+      <p>El Legal Design propone utilizar principios de diseño centrado en las personas para hacer que la información jurídica resulte más comprensible, accesible y funcional.</p>
+      <p>Aplicado a la protección de datos personales, puede traducirse en títulos descriptivos, lenguaje claro, tablas comparativas, jerarquías visuales y mecanismos de navegación que permitan encontrar rápidamente la información relevante.</p>
+      <p>Sin embargo, incorporar íconos o simplificar párrafos no convierte automáticamente un documento en un instrumento de transparencia.</p>
+      <p>El diseño debe partir de un contenido jurídicamente correcto.</p>
+      <p>Por ejemplo, no basta con afirmar que «los datos se conservarán durante el tiempo necesario». La organización debería determinar y comunicar plazos concretos o criterios suficientemente claros y objetivos, según las características del tratamiento.</p>
+      <p>Tampoco resulta adecuado agrupar todas las operaciones bajo expresiones como «mejorar nuestros servicios» cuando existen finalidades distintas que requieren explicaciones y fundamentos jurídicos diferenciados.</p>
+      <p>Una página web puede recopilar datos mediante formularios de contacto, procesos de compra, suscripciones comerciales o herramientas de analítica. Estas operaciones no necesariamente comparten la misma finalidad ni la misma base de legitimación.</p>
+      <p>Por ello, el primer paso para diseñar una política de privacidad eficaz no es seleccionar una plantilla visual, sino conocer cómo se recopilan, utilizan, almacenan, comunican y eliminan los datos personales.</p>
+      <p>Solo después de comprender ese flujo de información es posible traducirlo en un documento que represente fielmente las prácticas de la organización.</p>
+
+      <h2 id="consentimiento">Informar no es lo mismo que obtener consentimiento</h2>
+      <p>Otro aspecto que merece especial atención es la frecuente confusión entre el deber de información y el consentimiento.</p>
+      <p>Informar al titular sobre el tratamiento de sus datos constituye una obligación que debe observarse conforme a la normativa aplicable. Obtener su consentimiento, por su parte, corresponde a aquellos tratamientos cuya legitimación depende de esa manifestación de voluntad.</p>
+      <p>En este sentido, no todos los tratamientos requieren consentimiento y tampoco debería interpretarse que aceptar una política de privacidad constituye, automáticamente, una autorización válida para cualquier finalidad.</p>
+      <div class="note">
+        <strong>Criterio de la autoridad ecuatoriana</strong>
+        La Superintendencia de Protección de Datos Personales ha abordado esta distinción en el Oficio N.º SPDP-IRD-2026-0028-O, señalando que la política debe estar disponible, corresponder a los tratamientos efectuados y comunicarse oportunamente, sin que su aceptación formal sea una exigencia general.
+      </div>
+      <p>Esta precisión tiene consecuencias prácticas para el diseño de formularios, casillas de aceptación y mecanismos de gestión de preferencias.</p>
+
+      <h2 id="cumplimiento">De la documentación al cumplimiento efectivo</h2>
+      <p>Una política de privacidad correctamente estructurada debería ser el resultado de un ejercicio previo de identificación y análisis de los tratamientos de datos personales.</p>
+      <p>Esto implica conocer las actividades desarrolladas por cada área, determinar sus finalidades, establecer las bases de legitimación correspondientes, revisar las relaciones con terceros y definir los plazos y condiciones de conservación.</p>
+      <p>También requiere coordinación entre las áreas jurídica, tecnológica y operativa. Una política redactada sin considerar el funcionamiento real de los sistemas puede terminar describiendo procesos que no existen u omitiendo tratamientos que sí se ejecutan.</p>
+      <p>Desde esta perspectiva, el verdadero valor del Legal Design consiste en conectar la precisión jurídica con una experiencia informativa comprensible para el titular.</p>
+      <blockquote class="pull">No se trata de presentar menos información, sino de <em>comunicar mejor la información necesaria.</em></blockquote>
+
+      <h2 id="reflexion">Reflexión final</h2>
+      <p>Las políticas de privacidad no deberían entenderse como documentos estáticos que se incorporan a una página web únicamente para acreditar una obligación formal.</p>
+      <p>Son instrumentos de transparencia que deben evolucionar junto con los procesos, tecnologías y finalidades de tratamiento de cada organización.</p>
+      <p>La próxima vez que revisemos una política de privacidad, quizá la primera pregunta no debería ser si contiene suficientes artículos legales, sino si una persona que entrega sus datos puede comprender qué hará la organización con ellos.</p>
+      <p>Porque una organización no demuestra transparencia simplemente diciendo que protege los datos personales, sino explicando de manera clara, precisa y verificable cómo los trata.</p>
+
+      <section class="refs">
+        <h2 id="referencias">Referencias normativas y técnicas</h2>
+        <ol>
+          <li>Ecuador. Ley Orgánica de Protección de Datos Personales, artículos 10, 12 y 47, numeral 4.</li>
+          <li>Superintendencia de Protección de Datos Personales. Oficio N.º SPDP-IRD-2026-0028-O. <a href="https://www.spdp.gob.ec/docs/consultas-absueltas/2026-2/oficio-n-spdp-ird-2026-0028-o/" target="_blank" rel="noopener">spdp.gob.ec/docs/consultas-absueltas/2026-2/oficio-n-spdp-ird-2026-0028-o</a></li>
+          <li>Agencia Española de Protección de Datos. Derecho de información y modelo de información por capas. <a href="https://www.aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-de-informacion" target="_blank" rel="noopener">aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-de-informacion</a></li>
+          <li>Comité Europeo de Protección de Datos. Directrices sobre transparencia en el marco del Reglamento (UE) 2016/679. <a href="https://www.edpb.europa.eu/documents/guideline/article-29-working-party-guidelines-on-transparency-under-regulation-2016679_en" target="_blank" rel="noopener">edpb.europa.eu/documents/guideline/article-29-working-party-guidelines-on-transparency-under-regulation-2016679_en</a></li>
+        </ol>
+        <p class="disclaimer">Artículo de análisis y opinión profesional sobre la aplicación de los principios de transparencia y protección de datos personales.</p>
+      </section>
+
+      <div class="author">
+        <svg aria-hidden="true"><use href="#logo-d"/></svg>
+        <p><strong>Denisse Armijos</strong>Abogada especializada en protección de datos personales, privacidad y tecnología. Máster en Derecho de las Telecomunicaciones, Protección de Datos, Sociedad de la Información y Audiovisual por la Universidad Carlos III de Madrid.</p>
+      </div>
+
+      <a class="more" href="../#publicaciones">Volver a publicaciones <svg><use href="#arrow"/></svg></a>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="../"><svg><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
+    <span>Este sitio no usa cookies ni herramientas de rastreo</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var heads = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function update() {
+    var y = window.scrollY + 140, idx = 0;
+    heads.forEach(function (h, i) { if (h && h.getBoundingClientRect().top + window.scrollY <= y) idx = i; });
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+</body>
+</html>
