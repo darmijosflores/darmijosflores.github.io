@@ -117,11 +117,9 @@ a.area:hover { border-color: var(--senal); transform: translateY(-2px); }
 
 /* ---------- Banda "Conversemos" ---------- */
 .talk { background: var(--tinta); color: var(--papel); }
-.talk .wrap { display: grid; grid-template-columns: auto 1px minmax(0, 1fr) auto; gap: 48px; align-items: center; padding-block: 56px; }
+.talk .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px 48px; padding-block: 56px; }
 .talk h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1; letter-spacing: -.01em; margin: 0; }
-.talk .sep { align-self: stretch; background: rgba(247,247,245,.35); }
-.talk p { margin: 0; color: var(--texto-azul-2); max-width: 52ch; font-size: 16px; }
-@media (max-width: 860px) { .talk .wrap { grid-template-columns: 1fr; gap: 20px; padding-block: 48px; } .talk .sep { display: none; } .talk .btn { justify-self: start; } }
+@media (max-width: 600px) { .talk .wrap { padding-block: 44px; } }
 
 /* ---------- Pie ---------- */
 footer.site { background: var(--papel); border-top: 1px solid var(--niebla); }
