@@ -81,13 +81,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 
 .story { max-width: 66ch; }
 .story .kicker { color: var(--senal-texto); display: block; margin-bottom: 20px; }
-.story p { margin: 0 0 24px; }
-.story p.open { font-family: var(--display); font-size: clamp(24px, 2.5vw, 30px); line-height: 1.35; margin-bottom: 32px; }
-.story p.open strong { font-weight: 500; }
+.story p { margin: 0 0 22px; font-family: var(--body); font-size: 17px; line-height: 1.75; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 .story strong { font-weight: 600; }
-.story blockquote { margin: 44px 0; padding: 28px 0; border-top: 2px solid var(--tinta); border-bottom: 1px solid var(--niebla); font-family: var(--display); font-size: clamp(26px, 3vw, 36px); line-height: 1.2; }
-.story blockquote em { color: var(--senal-texto); }
-.story .sign { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; margin-top: 36px; }
+.story a { color: var(--senal-texto); text-underline-offset: 3px; }
 @media (max-width: 900px) {
   .bio-sec { padding-block: 56px 72px; }
   .bio-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -216,23 +212,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
       <article class="story">
         <span class="kicker">Biografía</span>
 
-        <p class="open"><strong>Denisse Armijos es abogada especialista en protección de datos personales y derecho digital, y forma parte de una nueva generación de juristas que está ayudando a Ecuador a tomarse en serio la privacidad.</strong> Su premisa es tan sencilla como exigente: no basta con cumplir la ley; hay que poder demostrarlo.</p>
+        <p><strong>Denisse Armijos</strong> es abogada especializada en protección de datos personales y derecho digital, y forma parte de una nueva generación de juristas que contribuye a fortalecer la cultura de privacidad en Ecuador.</p>
 
-        <p>En un país donde la Ley Orgánica de Protección de Datos Personales lleva años vigente pero todavía es poco conocida, Denisse trabaja justo donde la norma se vuelve práctica. Como consultora externa en <strong>FIGCONSUL S.A.</strong>, acompaña a entidades públicas y empresas privadas en todo el recorrido del cumplimiento: desde el primer diagnóstico y el mapa de qué datos tratan y para qué, hasta las evaluaciones de impacto, los contratos con proveedores y la evidencia que una organización necesita tener lista antes de que la autoridad la pida.</p>
+        <p>En un país donde la Ley Orgánica de Protección de Datos Personales lleva años vigente, pero su aplicación sigue planteando desafíos, Denisse trabaja precisamente donde la norma se convierte en práctica. Su experiencia comprende el asesoramiento a entidades públicas y empresas privadas en distintas etapas del cumplimiento normativo: desde los diagnósticos iniciales y la identificación de actividades de tratamiento hasta las evaluaciones de impacto, la gestión de riesgos, los instrumentos jurídicos y los mecanismos de gobernanza necesarios para demostrar el cumplimiento de las obligaciones legales.</p>
 
-        <p>Ha trabajado con organizaciones de sectores tan distintos como el retail, las telecomunicaciones y los seguros, cada uno con sus propios riesgos y sus propias preguntas. Antes de su labor actual fue abogada asociada en <strong>HEKA Law Firm</strong>, donde asesoró a clientes en el cumplimiento de la LOPDP, y se formó en derecho digital y ciberseguridad jurídica en la <strong>Agencia de Tecnología Legal</strong>.</p>
+        <p>A lo largo de su trayectoria ha trabajado con organizaciones de sectores como seguros, retail masivo, automotriz, logística, seguridad privada y telecomunicaciones, cada uno con particularidades operativas y desafíos regulatorios propios. Esta experiencia le ha permitido comprender que la protección de datos no puede abordarse de manera aislada, sino que exige conocer cómo funcionan las organizaciones y cómo se toman las decisiones que involucran información personal.</p>
 
-        <blockquote>No basta con cumplir; <em>hay que poder demostrarlo.</em></blockquote>
+        <p>Su premisa es sencilla: no basta con cumplir la ley; hay que poder demostrarlo.</p>
 
-        <p>Su perfil une dos escuelas. Se graduó como abogada en la <strong>Universidad Católica de Santiago de Guayaquil</strong> y completó el <strong>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información</strong> en la <strong>Universidad Carlos III de Madrid</strong>. Esa doble formación le permite algo poco habitual en la región: leer la ley ecuatoriana con la experiencia que Europa ya acumuló aplicando el Reglamento General de Protección de Datos, y convertir ambas en decisiones concretas para cada organización. A su formación jurídica suma conocimientos de los estándares ISO/IEC 27001 y 27701, el idioma en el que hablan los equipos de seguridad y tecnología.</p>
+        <p>Su formación reúne dos perspectivas jurídicas. Se graduó como abogada en la Universidad Católica de Santiago de Guayaquil y obtuvo el Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información en la Universidad Carlos III de Madrid. Esta formación le permite abordar la normativa ecuatoriana a la luz de la experiencia europea en la aplicación del Reglamento General de Protección de Datos (RGPD), sin perder de vista las particularidades del contexto local. A su preparación jurídica suma conocimientos sobre los estándares ISO/IEC 27001 y 27701, la seguridad de la información y la gestión de riesgos tecnológicos.</p>
 
-        <p>Su mirada va más allá del expediente. Denisse investiga los desafíos jurídicos de la inteligencia artificial: su trabajo de fin de máster examinó los asistentes de IA que graban, transcriben y resumen reuniones, una herramienta que muchas organizaciones ya usan a diario sin haberse preguntado qué ocurre con esos datos. Desde su <a href="observatorio.html">Observatorio de autoridades</a> analiza las decisiones de las agencias de protección de datos de Europa y América Latina y las traduce a una sola pregunta: ¿qué significa esto para Ecuador?</p>
+        <p>Su interés por el derecho digital también se extiende a los desafíos jurídicos de la inteligencia artificial. En su trabajo de fin de máster investigó las implicaciones del uso de asistentes de IA capaces de grabar, transcribir y resumir reuniones, con especial atención a la protección de datos personales, la confidencialidad y la atribución de responsabilidades. Actualmente desarrolla un <a href="observatorio.html">Observatorio de autoridades de protección de datos</a>, dedicado al análisis de decisiones regulatorias de Europa y América Latina y sus implicaciones para Ecuador.</p>
 
-        <p>Trabaja con rigor jurídico, con foco en el riesgo y con una convicción: el derecho de la tecnología se puede explicar sin jerga. Por eso escribe para públicos muy distintos, desde directivos y equipos técnicos hasta estudiantes y ciudadanos, con la misma exigencia de claridad, fuentes verificables y opinión propia.</p>
+        <p>Denisse considera que el conocimiento jurídico no debería quedar limitado a quienes ejercen el derecho. Esa convicción orienta sus publicaciones, a través de las cuales busca explicar cuestiones de privacidad, tecnología e inteligencia artificial de manera clara, sin renunciar al rigor jurídico. Su propósito es que profesionales, estudiantes y ciudadanos puedan comprender cómo las transformaciones tecnológicas inciden en sus derechos y responsabilidades, y participar de manera informada en las conversaciones que estas generan.</p>
 
-        <p>Habla español e inglés, con nivel C2 certificado por Cambridge, y actualmente cursa la certificación como Delegada de Protección de Datos y un certificado profesional en gestión de riesgos.</p>
-
-        <p class="sign">Su meta es clara: que proteger los datos personales deje de ser un trámite y se convierta en una forma de generar confianza, en Ecuador y en toda América del Sur.</p>
+        <p>Habla español e inglés, con nivel C2 certificado por Cambridge, y actualmente amplía su formación en protección de datos personales y gestión de riesgos, incluyendo su preparación para la certificación como Delegada de Protección de Datos.</p>
       </article>
     </div>
   </section>
