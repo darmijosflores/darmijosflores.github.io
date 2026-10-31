@@ -69,9 +69,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .bio-sec { padding-block: 80px 104px; }
 .bio-grid { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: 80px; align-items: start; }
 .photo { position: sticky; top: 112px; margin: 0; }
-.photo .frame { position: relative; }
+.photo .frame { position: relative; background: #E3E8ED; }
 .photo .frame::before { content: ""; position: absolute; inset: 0; transform: translate(14px, -14px); background: var(--senal); }
-.photo img { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.photo .frame::after { content: ""; position: absolute; inset: 0; background: #E3E8ED; }
+.photo img { position: relative; z-index: 1; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; object-position: 50% 100%; }
 .photo figcaption { margin-top: 20px; display: grid; gap: 4px; }
 .photo figcaption strong { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; }
 .photo figcaption span { font-size: 14px; color: var(--texto-2); }
@@ -119,7 +120,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .press .btn.line { color: var(--papel); border-color: rgba(247,247,245,.5); }
 .press .btn.line:hover { background: var(--papel); color: var(--tinta); }
 .press .thumb { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-items: center; margin-bottom: 18px; }
-.press .thumb img { width: 96px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.press .thumb img { width: 96px; height: auto; aspect-ratio: 1 / 1; object-fit: contain; object-position: 50% 100%; background: #E3E8ED; }
 .press .thumb p { margin: 0; color: var(--texto-azul-2); font-size: 15px; }
 .copied { font-size: 13px; color: var(--senal-suave); }
 @media (max-width: 860px) { .press-grid { grid-template-columns: 1fr; gap: 40px; } .press blockquote { padding: 22px; } .press .wrap { padding-block: 64px; } }
@@ -202,7 +203,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
   <section class="bio-sec" aria-label="Biografía">
     <div class="wrap bio-grid">
       <figure class="photo">
-        <div class="frame"><img src="img/denisse-armijos.jpg" width="848" height="1060" alt="Retrato de Denisse Armijos, de suéter negro y gafas, con los brazos cruzados."></div>
+        <div class="frame"><img src="img/denisse-armijos-retrato.webp" srcset="img/denisse-armijos-retrato-600.webp 600w, img/denisse-armijos-retrato.webp 900w" sizes="(max-width: 900px) 400px, 460px" width="900" height="900" alt="Retrato de Denisse Armijos, con gafas y suéter negro de cuello alto."></div>
         <figcaption>
           <strong>Denisse Armijos</strong>
           <span>Abogada · Protección de datos y derecho digital</span>
@@ -261,8 +262,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
         </div>
         <div>
           <span class="kicker">Fotografía</span>
-          <div class="thumb"><img src="img/denisse-armijos.jpg" width="848" height="1060" alt=""><p>Retrato vertical, formato 4:5.</p></div>
-          <a class="btn line" href="img/denisse-armijos.jpg" download="denisse-armijos.jpg"><svg aria-hidden="true"><use href="#down"/></svg>Descargar foto</a>
+          <div class="thumb"><img src="img/denisse-armijos-retrato-600.webp" width="600" height="600" alt=""><p>Retrato sin fondo, formato PNG cuadrado.</p></div>
+          <a class="btn line" href="img/denisse-armijos-retrato.png" download="denisse-armijos.png"><svg aria-hidden="true"><use href="#down"/></svg>Descargar foto</a>
         </div>
       </div>
     </div>
