@@ -125,10 +125,9 @@ a.area:hover { border-color: var(--senal); transform: translateY(-2px); }
 footer.site { background: var(--papel); border-top: 1px solid var(--niebla); }
 footer.site .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px 40px; padding-block: 40px 28px; }
 .f-brand { display: flex; align-items: center; gap: 18px; text-decoration: none; }
-.f-brand svg { width: 44px; height: 45px; }
-.f-brand .sep { width: 1px; height: 40px; background: var(--niebla); }
-.f-brand strong { display: block; font-weight: 600; font-size: 15px; }
-.f-brand span { display: block; font-size: 14px; color: var(--texto-2); }
+.f-brand svg { width: 38px; height: 39px; }
+.f-brand .sep { width: 1px; height: 34px; background: var(--niebla); }
+.f-brand .name { font-weight: 600; font-size: 14px; letter-spacing: .22em; text-transform: uppercase; white-space: nowrap; }
 .f-links { display: flex; gap: 28px; flex-wrap: wrap; font-size: 14px; }
 .f-links a { text-decoration: none; }
 .f-links a:hover, .f-links a[aria-current] { color: var(--senal-texto); }
