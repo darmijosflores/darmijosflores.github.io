@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Perfil · Denisse Armijos</title>
-<meta name="description" content="Denisse Armijos, abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho digital. Trayectoria, formación, certificaciones y contacto.">
+<title>Biografía · Denisse Armijos</title>
+<meta name="description" content="Denisse Armijos es abogada especialista en protección de datos personales y derecho digital. Ayuda a organizaciones en Ecuador a cumplir la LOPDP y a poder demostrarlo.">
 <meta name="author" content="Denisse Armijos">
 <meta name="theme-color" content="#102A43">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Denisse Armijos · Perfil">
+<meta property="og:title" content="Denisse Armijos · Biografía">
 <meta property="og:description" content="Abogada en protección de datos y derecho digital. Privacidad con rigor. Tecnología sin miedo.">
 <meta property="og:url" content="https://darmijosflores.github.io/perfil.html">
 <meta property="og:image" content="https://darmijosflores.github.io/og-image.png">
@@ -18,9 +18,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-/* Layout: página de perfil — cabecera del sitio; arriba, la foto a la izquierda y la biografía a su lado;
-   debajo, la trayectoria como línea de tiempo, formación y certificaciones en dos columnas,
-   un bloque para medios y eventos, y el contacto. Misma marca que la portada. */
+/* Layout: biografía de autora — portada en azul con el nombre; debajo, la foto fija a la izquierda
+   y una biografía narrativa a su lado, leída de corrido como un perfil editorial, con una cita destacada.
+   Cierra con una invitación a trabajar juntos y un bloque para medios y eventos. */
 :root {
   --tinta: #102A43;
   --papel: #F7F7F5;
@@ -49,7 +49,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 @media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
 .kicker { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 .mark { --d1: var(--senal); --d2: #E7C0AF; color: var(--tinta); }
-.ico { width: 44px; height: 44px; flex: none; --ic-line: var(--tinta); --ic-fill: var(--senal); }
+.mark.on-dark { --d1: var(--senal); --d2: #69362A; color: var(--papel); }
 
 /* Cabecera */
 header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--papel); border-bottom: 1px solid var(--niebla); }
@@ -73,100 +73,81 @@ nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--senal); 
   .brand span { font-size: 23px; }
 }
 
-/* Presentación: foto + biografía */
-.intro { padding-block: 72px 96px; }
-.intro-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+/* Portada de la biografía */
+.masthead { background: var(--tinta); color: var(--papel); position: relative; overflow: hidden; }
+.masthead .wrap { padding-block: 64px 0; position: relative; }
+.masthead .kicker { color: var(--senal-suave); margin: 0 0 18px; }
+.masthead h1 { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 112px); line-height: .95; letter-spacing: -.02em; margin: 0; }
+.masthead .tag { font-family: var(--display); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); margin: 20px 0 0; color: var(--texto-azul-2); }
+.masthead .tag em { color: var(--senal-claro); }
+.masthead .line { display: flex; align-items: center; gap: 20px; margin-top: 48px; height: 72px; }
+.masthead .line svg { width: 58px; height: 60px; flex: none; }
+.masthead .line div { flex: 1; height: 7px; background: var(--senal); margin-right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); }
+
+/* Foto + biografía */
+.bio-sec { padding-block: 80px 104px; }
+.bio-grid { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: 80px; align-items: start; }
 .photo { position: sticky; top: 112px; margin: 0; }
 .photo .frame { position: relative; }
 .photo .frame::before { content: ""; position: absolute; inset: 0; transform: translate(14px, -14px); background: var(--senal); }
-.photo img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.photo figcaption { margin-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--texto-2); }
-.dl { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: var(--senal-texto); padding-block: 8px; }
+.photo img { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.photo figcaption { margin-top: 20px; display: grid; gap: 4px; }
+.photo figcaption strong { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; }
+.photo figcaption span { font-size: 14px; color: var(--texto-2); }
+.dl { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: var(--senal-texto); padding-block: 10px; margin-top: 6px; }
 .dl svg { width: 14px; height: 14px; }
 .dl:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.bio .role { color: var(--senal-texto); margin: 0 0 16px; }
-.bio h1 { font-family: var(--display); font-weight: 400; font-size: clamp(46px, 6vw, 80px); line-height: .98; letter-spacing: -.015em; margin: 0 0 18px; }
-.bio .firma { font-family: var(--display); font-style: italic; font-size: clamp(22px, 2.2vw, 27px); line-height: 1.3; margin: 0 0 36px; }
-.bio .firma em { color: var(--senal-texto); }
-.bio .lead { font-family: var(--display); font-size: clamp(22px, 2.2vw, 26px); line-height: 1.4; margin: 0 0 24px; }
-.bio p { margin: 0 0 20px; max-width: 64ch; }
-.bio .creo { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; margin: 32px 0 0; padding-top: 24px; border-top: 1px solid var(--niebla); }
-.facts { margin: 40px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; border-top: 2px solid var(--tinta); }
-.facts div { padding: 16px 0; border-bottom: 1px solid var(--niebla); min-width: 0; }
-.facts dt { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); margin: 0 0 4px; }
-.facts dd { margin: 0; font-family: var(--display); font-size: 20px; line-height: 1.3; }
+.story { max-width: 66ch; }
+.story .kicker { color: var(--senal-texto); display: block; margin-bottom: 20px; }
+.story p { margin: 0 0 24px; }
+.story p.open { font-family: var(--display); font-size: clamp(24px, 2.5vw, 30px); line-height: 1.35; margin-bottom: 32px; }
+.story p.open strong { font-weight: 500; }
+.story strong { font-weight: 600; }
+.story blockquote { margin: 44px 0; padding: 28px 0; border-top: 2px solid var(--tinta); border-bottom: 1px solid var(--niebla); font-family: var(--display); font-size: clamp(26px, 3vw, 36px); line-height: 1.2; }
+.story blockquote em { color: var(--senal-texto); }
+.story .sign { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; margin-top: 36px; }
 @media (max-width: 900px) {
-  .intro { padding-block: 48px 72px; }
-  .intro-grid { grid-template-columns: 1fr; gap: 48px; }
-  .photo { position: static; max-width: 420px; }
+  .bio-sec { padding-block: 56px 72px; }
+  .bio-grid { grid-template-columns: 1fr; gap: 48px; }
+  .photo { position: static; max-width: 400px; }
 }
-@media (max-width: 520px) { .facts { grid-template-columns: 1fr; } }
 
-/* Secciones */
-.sec { padding-block: 96px; }
-.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
-.sec-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0; }
-@media (max-width: 640px) { .sec { padding-block: 64px; } .sec-head { margin-bottom: 32px; } }
-
-/* Trayectoria */
-.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
-.job { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; padding-block: 36px; border-top: 1px solid var(--niebla); }
-.job:first-child { border-top: 2px solid var(--tinta); }
-.job .when { color: var(--senal-texto); padding-top: 8px; }
-.job .when span { display: block; color: var(--texto-2); font-weight: 400; letter-spacing: .04em; text-transform: none; font-size: 14px; margin-top: 6px; }
-.job h3 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.15; margin: 0 0 4px; }
-.job .org { margin: 0 0 18px; color: var(--texto-2); font-weight: 600; }
-.job ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; max-width: 70ch; }
-.job li { position: relative; padding-left: 22px; }
-.job li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 8px; height: 8px; background: var(--senal); }
-.now { display: inline-block; margin-left: 10px; vertical-align: middle; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; background: var(--tinta); color: var(--papel); padding: 3px 8px; }
-@media (max-width: 760px) { .job { grid-template-columns: 1fr; gap: 10px; padding-block: 28px; } .job .when { padding-top: 0; } }
-
-/* Formación y certificaciones */
-.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; }
-.two h3.col { font-family: var(--display); font-weight: 400; font-size: 30px; margin: 0 0 20px; display: flex; align-items: center; gap: 14px; }
-.list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
-.list li { padding: 18px 0; border-bottom: 1px solid var(--niebla); display: grid; gap: 4px; }
-.list strong { font-family: var(--display); font-weight: 500; font-size: 21px; line-height: 1.3; }
-.list span { font-size: 15px; color: var(--texto-2); }
-.tag { justify-self: start; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--senal-texto); border: 1px solid currentColor; padding: 2px 8px; margin-top: 4px; }
-@media (max-width: 860px) { .two { grid-template-columns: 1fr; gap: 48px; } }
-
-/* Experiencia por sectores y marcos */
-.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.chips li { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 10px 16px; border: 1px solid var(--tinta); }
-.chips li.dark { background: var(--tinta); color: var(--papel); }
-.areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 8px; }
-.areas h3 { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--texto-2); margin: 0 0 16px; }
-@media (max-width: 760px) { .areas { grid-template-columns: 1fr; gap: 36px; } }
+/* Trabajemos juntos */
+.cta { background: var(--blanco); border-top: 1px solid var(--niebla); border-bottom: 1px solid var(--niebla); }
+.cta .wrap { padding-block: 88px; }
+.cta h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0 0 40px; max-width: 18ch; }
+.offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-bottom: 48px; }
+.offer { border-top: 2px solid var(--tinta); padding-top: 18px; display: grid; gap: 8px; align-content: start; }
+.offer .kicker { color: var(--senal-texto); }
+.offer h3 { font-family: var(--display); font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0; }
+.offer p { margin: 0; font-size: 15px; color: var(--texto-2); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; background: var(--senal); color: var(--blanco); border: 0; padding: 16px 22px; cursor: pointer; }
+.btn:hover { background: var(--senal-texto); }
+.btn.line { background: transparent; color: var(--tinta); border: 1px solid var(--tinta); }
+.btn.line:hover { background: var(--tinta); color: var(--papel); }
+.btn svg { width: 14px; height: 14px; }
+@media (max-width: 860px) { .offers { grid-template-columns: 1fr; gap: 24px; } .cta .wrap { padding-block: 64px; } }
 
 /* Medios y eventos */
 .press { background: var(--tinta); color: var(--papel); }
-.press .sec-head h2 { color: var(--papel); }
-.press-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.press .wrap { padding-block: 88px; }
+.press h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4vw, 46px); line-height: 1.05; margin: 0 0 12px; }
+.press .intro { color: var(--texto-azul-2); margin: 0 0 40px; max-width: 60ch; }
+.press-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: start; }
 .press .kicker { color: var(--senal-suave); display: block; margin-bottom: 12px; }
-.press blockquote { margin: 0; background: var(--papel); color: var(--tinta); padding: 32px; font-size: 16px; line-height: 1.7; }
+.press blockquote { margin: 0; background: var(--papel); color: var(--tinta); padding: 30px; font-size: 16px; line-height: 1.7; }
 .press .tools { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; align-items: center; }
-.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; background: var(--senal); color: var(--blanco); border: 0; padding: 14px 20px; cursor: pointer; }
-.btn:hover { background: var(--senal-texto); }
-.btn.ghost { background: transparent; color: var(--papel); border: 1px solid rgba(247,247,245,.5); }
-.btn.ghost:hover { border-color: var(--papel); }
-.btn svg { width: 14px; height: 14px; }
-.press .note { color: var(--texto-azul-2); font-size: 15px; margin: 0 0 20px; }
+.press .btn.line { color: var(--papel); border-color: rgba(247,247,245,.5); }
+.press .btn.line:hover { background: var(--papel); color: var(--tinta); }
+.press .thumb { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-items: center; margin-bottom: 18px; }
+.press .thumb img { width: 96px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.press .thumb p { margin: 0; color: var(--texto-azul-2); font-size: 15px; }
 .copied { font-size: 13px; color: var(--senal-suave); }
-@media (max-width: 860px) { .press-grid { grid-template-columns: 1fr; gap: 40px; } .press blockquote { padding: 24px; } }
-
-/* Contacto */
-.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.channel { border-top: 2px solid var(--tinta); padding-top: 18px; display: grid; gap: 6px; text-decoration: none; min-width: 0; }
-.channel .kicker { color: var(--senal-texto); }
-.channel .v { font-family: var(--display); font-size: 24px; overflow-wrap: anywhere; }
-a.channel:hover .v { color: var(--senal-texto); }
-@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .press-grid { grid-template-columns: 1fr; gap: 40px; } .press blockquote { padding: 22px; } .press .wrap { padding-block: 64px; } }
 
 /* Pie */
-footer { border-top: 1px solid var(--niebla); }
 footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-block: 40px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
 footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--tinta); }
 footer .firma { font-family: var(--display); font-style: italic; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--tinta); }
@@ -182,8 +163,7 @@ footer .firma em { color: var(--senal-texto); }
   </symbol>
   <symbol id="down" viewBox="0 0 14 14"><path d="M7 1v9M3 6l4 4 4-4M1 13h12" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <symbol id="copy" viewBox="0 0 14 14"><rect x="4" y="4" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 4V1H1v9h3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
-  <symbol id="i-formacion" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M50 30 C40 22 26 22 16 26 V76 C26 72 40 72 50 80 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M50 30 C40 22 26 22 16 26 V76 C26 72 40 72 50 80 C60 72 74 72 84 76 V26 C74 22 60 22 50 30 Z M50 30 V80"/></g></symbol>
-  <symbol id="i-certificacion" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="50" cy="40" r="20"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="50" cy="40" r="20"/><path d="M42 40 L48 46 L59 34"/><path d="M40 57 L34 84 L42 79 L47 86 M60 57 L66 84 L58 79 L53 86"/></g></symbol>
+  <symbol id="mail" viewBox="0 0 14 14"><rect x="1" y="2.5" width="12" height="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.5 3l5.5 4.5L12.5 3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
 </svg>
 
 <header class="site" id="top">
@@ -217,131 +197,74 @@ footer .firma em { color: var(--senal-texto); }
 </header>
 
 <main>
-  <section class="intro" aria-labelledby="nombre">
-    <div class="wrap intro-grid">
+  <section class="masthead" aria-labelledby="nombre">
+    <div class="wrap">
+      <p class="kicker">Abogada · Protección de datos y derecho digital</p>
+      <h1 id="nombre">Denisse Armijos</h1>
+      <p class="tag">Privacidad con rigor. <em>Tecnología sin miedo.</em></p>
+      <div class="line" aria-hidden="true"><svg class="mark on-dark"><use href="#logo-d"/></svg><div></div></div>
+    </div>
+  </section>
+
+  <section class="bio-sec" aria-label="Biografía">
+    <div class="wrap bio-grid">
       <figure class="photo">
-        <div class="frame"><img src="img/denisse-armijos.jpg" width="520" height="650" alt="Retrato de Denisse Armijos con los brazos cruzados, de suéter negro y gafas, sobre una pared clara."></div>
+        <div class="frame"><img src="img/denisse-armijos.jpg" width="848" height="1060" alt="Retrato de Denisse Armijos, de suéter negro y gafas, con los brazos cruzados."></div>
         <figcaption>
-          <span>Quito, Ecuador</span>
-          <a class="dl" href="img/denisse-armijos-foto-completa.jpg" download>Descargar foto <svg aria-hidden="true"><use href="#down"/></svg></a>
+          <strong>Denisse Armijos</strong>
+          <span>Abogada · Quito, Ecuador</span>
+          <a class="dl" href="img/denisse-armijos.jpg" download="denisse-armijos.jpg">Descargar foto <svg aria-hidden="true"><use href="#down"/></svg></a>
         </figcaption>
       </figure>
 
-      <div class="bio">
-        <p class="kicker role">Abogada · Protección de datos, privacidad y derecho digital</p>
-        <h1 id="nombre">Denisse Armijos</h1>
-        <p class="firma">Privacidad con rigor. <em>Tecnología sin miedo.</em></p>
+      <article class="story">
+        <span class="kicker">Biografía</span>
 
-        <p class="lead">Soy abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho de las tecnologías. Acompaño a organizaciones públicas y privadas a cumplir la Ley Orgánica de Protección de Datos Personales y, sobre todo, a poder demostrarlo.</p>
-        <p>Hoy trabajo como consultora externa en FIGCONSUL S.A., donde desarrollo proyectos de adecuación a la LOPDP: diagnósticos de cumplimiento y análisis de brechas, registros de actividades de tratamiento, evaluaciones de riesgos y de impacto, revisión de proveedores, contratos y transferencias de datos, y las políticas y procedimientos que sostienen el cumplimiento. Antes fui abogada asociada en HEKA Law Firm y legal intern en la Agencia de Tecnología Legal (ATL). He trabajado con organizaciones de los sectores retail, telecomunicaciones y seguros.</p>
-        <p>Me formé como abogada en la Universidad Católica de Santiago de Guayaquil y completé el Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información en la Universidad Carlos III de Madrid. Esa doble mirada, ecuatoriana y europea, se complementa con conocimientos de los marcos ISO/IEC 27001 y 27701.</p>
-        <p>Investigo los desafíos jurídicos de la inteligencia artificial: mi trabajo de fin de máster analizó los asistentes de IA que graban, transcriben y resumen reuniones, a partir del caso Read.ai. Además, analizo lo que deciden las autoridades de protección de datos de Europa y América Latina, y lo traduzco a lo que significa para Ecuador.</p>
-        <p class="creo">Creo que la tecnología se puede explicar sin jerga, y que hay que hacerlo sin miedo.</p>
+        <p class="open"><strong>Denisse Armijos es abogada especialista en protección de datos personales y derecho digital, y forma parte de una nueva generación de juristas que está ayudando a Ecuador a tomarse en serio la privacidad.</strong> Su premisa es tan sencilla como exigente: no basta con cumplir la ley; hay que poder demostrarlo.</p>
 
-        <dl class="facts">
-          <div><dt>Actualmente</dt><dd>Consultora externa en FIGCONSUL S.A.</dd></div>
-          <div><dt>Especialidad</dt><dd>Protección de datos y cumplimiento de la LOPDP</dd></div>
-          <div><dt>Formación</dt><dd>Abogada · Máster UC3M</dd></div>
-          <div><dt>Idiomas</dt><dd>Español nativo · Inglés C2</dd></div>
-        </dl>
-      </div>
+        <p>En un país donde la Ley Orgánica de Protección de Datos Personales lleva años vigente pero todavía es poco conocida, Denisse trabaja justo donde la norma se vuelve práctica. Como consultora externa en <strong>FIGCONSUL S.A.</strong>, acompaña a entidades públicas y empresas privadas en todo el recorrido del cumplimiento: desde el primer diagnóstico y el mapa de qué datos tratan y para qué, hasta las evaluaciones de impacto, los contratos con proveedores y la evidencia que una organización necesita tener lista antes de que la autoridad la pida.</p>
+
+        <p>Ha trabajado con organizaciones de sectores tan distintos como el retail, las telecomunicaciones y los seguros, cada uno con sus propios riesgos y sus propias preguntas. Antes de su labor actual fue abogada asociada en <strong>HEKA Law Firm</strong>, donde asesoró a clientes en el cumplimiento de la LOPDP, y se formó en derecho digital y ciberseguridad jurídica en la <strong>Agencia de Tecnología Legal</strong>.</p>
+
+        <blockquote>No basta con cumplir; <em>hay que poder demostrarlo.</em></blockquote>
+
+        <p>Su perfil une dos escuelas. Se graduó como abogada en la <strong>Universidad Católica de Santiago de Guayaquil</strong> y completó el <strong>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información</strong> en la <strong>Universidad Carlos III de Madrid</strong>. Esa doble formación le permite algo poco habitual en la región: leer la ley ecuatoriana con la experiencia que Europa ya acumuló aplicando el Reglamento General de Protección de Datos, y convertir ambas en decisiones concretas para cada organización. A su formación jurídica suma conocimientos de los estándares ISO/IEC 27001 y 27701, el idioma en el que hablan los equipos de seguridad y tecnología.</p>
+
+        <p>Su mirada va más allá del expediente. Denisse investiga los desafíos jurídicos de la inteligencia artificial: su trabajo de fin de máster examinó los asistentes de IA que graban, transcriben y resumen reuniones, una herramienta que muchas organizaciones ya usan a diario sin haberse preguntado qué ocurre con esos datos. Desde su <a href="./#observatorio">Observatorio de autoridades</a> analiza las decisiones de las agencias de protección de datos de Europa y América Latina y las traduce a una sola pregunta: ¿qué significa esto para Ecuador?</p>
+
+        <p>Trabaja con rigor jurídico, con foco en el riesgo y con una convicción: el derecho de la tecnología se puede explicar sin jerga. Por eso escribe para públicos muy distintos, desde directivos y equipos técnicos hasta estudiantes y ciudadanos, con la misma exigencia de claridad, fuentes verificables y opinión propia.</p>
+
+        <p>Habla español e inglés, con nivel C2 certificado por Cambridge, y actualmente cursa la certificación como Delegada de Protección de Datos y un certificado profesional en gestión de riesgos.</p>
+
+        <p class="sign">Su meta es clara: que proteger los datos personales deje de ser un trámite y se convierta en una forma de generar confianza, en Ecuador y en toda América del Sur.</p>
+      </article>
     </div>
   </section>
 
-  <section class="sec" id="trayectoria" style="padding-top:0">
+  <section class="cta" aria-labelledby="juntos">
     <div class="wrap">
-      <div class="sec-head"><h2>Trayectoria</h2></div>
-      <ol class="timeline">
-        <li class="job">
-          <p class="kicker when">Feb. 2026 · Presente<span>Ecuador</span></p>
-          <div>
-            <h3>Consultora externa <span class="now">Actual</span></h3>
-            <p class="org">FIGCONSUL S.A.</p>
-            <ul>
-              <li>Proyectos de adecuación y cumplimiento de la LOPDP para entidades públicas y privadas.</li>
-              <li>Diagnósticos de cumplimiento, análisis de brechas y planes de acción con medidas jurídicas, organizativas y técnicas.</li>
-              <li>Registros de actividades de tratamiento, inventarios de datos y modelos de gobernanza.</li>
-              <li>Evaluaciones de riesgos y evaluaciones de impacto en protección de datos.</li>
-              <li>Análisis jurídico de proveedores, encargados del tratamiento, contratos y transferencias de datos.</li>
-              <li>Políticas, procedimientos, cláusulas y documentación de cumplimiento.</li>
-            </ul>
-          </div>
-        </li>
-        <li class="job">
-          <p class="kicker when">Ago. 2025 · Feb. 2026</p>
-          <div>
-            <h3>Abogada asociada</h3>
-            <p class="org">HEKA Law Firm</p>
-            <ul>
-              <li>Asesoría en protección de datos personales y cumplimiento de la LOPDP para clientes de distintos sectores.</li>
-              <li>Análisis y actualización de actividades de tratamiento y del Registro de Actividades de Tratamiento.</li>
-              <li>Participación en evaluaciones de riesgos y evaluaciones de impacto.</li>
-              <li>Revisión de contratos con proveedores y terceros: obligaciones, riesgos y garantías.</li>
-              <li>Investigación normativa, criterios jurídicos, informes y recomendaciones de cumplimiento.</li>
-            </ul>
-          </div>
-        </li>
-        <li class="job">
-          <p class="kicker when">Sept. 2024 · Jul. 2025</p>
-          <div>
-            <h3>Legal intern</h3>
-            <p class="org">Agencia de Tecnología Legal (ATL)</p>
-            <ul>
-              <li>Apoyo en proyectos de derecho digital, protección de datos y ciberseguridad jurídica.</li>
-              <li>Revisión de alertas normativas, análisis de riesgos e informes de cumplimiento.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="sec" id="formacion" style="padding-top:0">
-    <div class="wrap two">
-      <div>
-        <h3 class="col"><svg class="ico" aria-hidden="true"><use href="#i-formacion"/></svg>Formación</h3>
-        <ul class="list">
-          <li><strong>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información</strong><span>Universidad Carlos III de Madrid, España · 2024 – 2025</span></li>
-          <li><strong>Abogada</strong><span>Universidad Católica de Santiago de Guayaquil, Ecuador · 2018 – 2022</span></li>
-        </ul>
+      <h2 id="juntos">Trabajemos juntos.</h2>
+      <div class="offers">
+        <div class="offer"><span class="kicker">Organizaciones</span><h3>Cumplir la LOPDP y poder demostrarlo</h3><p>Diagnóstico, adecuación, evaluaciones de impacto y acompañamiento para entidades públicas y empresas privadas.</p></div>
+        <div class="offer"><span class="kicker">Firmas y equipos</span><h3>Talento especializado en derecho digital</h3><p>Protección de datos, privacidad y tecnología con formación ecuatoriana y europea.</p></div>
+        <div class="offer"><span class="kicker">Universidades y foros</span><h3>Charlas, clases e investigación</h3><p>Inteligencia artificial, privacidad y el futuro del derecho digital en América del Sur.</p></div>
       </div>
-      <div>
-        <h3 class="col"><svg class="ico" aria-hidden="true"><use href="#i-certificacion"/></svg>Certificaciones</h3>
-        <ul class="list">
-          <li><strong>Delegado de Protección de Datos (DPD)</strong><span class="tag">En curso</span></li>
-          <li><strong>Gestión de Riesgos</strong><span>Certificado profesional</span><span class="tag">En curso</span></li>
-          <li><strong>Inglés, nivel C2</strong><span>Cambridge Assessment English · University of Michigan</span></li>
-          <li><strong>Commercial Legal English</strong><span>Cambridge Law Studio</span></li>
-          <li><strong>Ciberseguridad y Ciberdefensa</strong><span>Curso</span></li>
-          <li><strong>Derecho Español y de la Unión Europea</strong><span>Curso</span></li>
-        </ul>
+      <div class="actions">
+        <a class="btn" href="mailto:darmijosflores@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>darmijosflores@gmail.com</a>
+        <a class="btn line" href="https://www.linkedin.com/in/darmijos/" rel="noopener" target="_blank">LinkedIn</a>
+        <a class="btn line" href="https://www.instagram.com/denissearmijospdp/" rel="noopener" target="_blank">Instagram</a>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="experiencia" style="padding-top:0">
+  <section class="press" id="medios" aria-labelledby="medios-t">
     <div class="wrap">
-      <div class="sec-head"><h2>Experiencia por sectores y marcos</h2></div>
-      <div class="areas">
-        <div>
-          <h3>Sectores</h3>
-          <ul class="chips"><li class="dark">Sector público</li><li>Retail</li><li>Telecomunicaciones</li><li>Seguros</li></ul>
-        </div>
-        <div>
-          <h3>Normativa y marcos</h3>
-          <ul class="chips"><li class="dark">LOPDP · Ecuador</li><li>RGPD · Unión Europea</li><li>ISO/IEC 27001</li><li>ISO/IEC 27701</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec press" id="medios">
-    <div class="wrap">
-      <div class="sec-head"><h2>Para medios y eventos</h2></div>
+      <h2 id="medios-t">Para medios y eventos</h2>
+      <p class="intro">Si vas a presentar a Denisse en un evento, una entrevista o una publicación, puedes usar libremente esta biografía breve y su fotografía.</p>
       <div class="press-grid">
         <div>
           <span class="kicker">Biografía breve</span>
-          <blockquote id="bio-breve">Denisse Armijos es abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho de las tecnologías. Tiene un Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información por la Universidad Carlos III de Madrid. Asesora a organizaciones públicas y privadas en el cumplimiento de la Ley Orgánica de Protección de Datos Personales y analiza resoluciones de autoridades de Europa y América Latina para traducir sus lecciones a la realidad ecuatoriana. Su investigación se centra en los desafíos jurídicos de la inteligencia artificial.</blockquote>
+          <blockquote id="bio-breve">Denisse Armijos es abogada ecuatoriana especialista en protección de datos personales y derecho digital. Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información por la Universidad Carlos III de Madrid, acompaña a organizaciones públicas y privadas en el cumplimiento de la Ley Orgánica de Protección de Datos Personales. Analiza las decisiones de autoridades de Europa y América Latina para traducir sus lecciones a la realidad ecuatoriana, e investiga los desafíos jurídicos de la inteligencia artificial.</blockquote>
           <div class="tools">
             <button class="btn" id="copy-bio" type="button"><svg aria-hidden="true"><use href="#copy"/></svg>Copiar biografía</button>
             <span class="copied" id="copied" role="status" aria-live="polite"></span>
@@ -349,20 +272,9 @@ footer .firma em { color: var(--senal-texto); }
         </div>
         <div>
           <span class="kicker">Fotografía</span>
-          <p class="note">Puedes usar esta fotografía para presentar a Denisse Armijos en eventos, entrevistas y publicaciones.</p>
-          <a class="btn ghost" href="img/denisse-armijos-foto-completa.jpg" download><svg aria-hidden="true"><use href="#down"/></svg>Descargar foto</a>
+          <div class="thumb"><img src="img/denisse-armijos.jpg" width="848" height="1060" alt=""><p>Retrato vertical, formato 4:5.</p></div>
+          <a class="btn line" href="img/denisse-armijos.jpg" download="denisse-armijos.jpg"><svg aria-hidden="true"><use href="#down"/></svg>Descargar foto</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="contacto">
-    <div class="wrap">
-      <div class="sec-head"><h2>Contacto</h2></div>
-      <div class="contact-grid">
-        <a class="channel" href="mailto:darmijosflores@gmail.com"><span class="kicker">Correo</span><span class="v">darmijosflores@gmail.com</span></a>
-        <a class="channel" href="https://www.linkedin.com/in/darmijos/" rel="noopener" target="_blank"><span class="kicker">LinkedIn</span><span class="v">in/darmijos</span></a>
-        <a class="channel" href="https://www.instagram.com/denissearmijospdp/" rel="noopener" target="_blank"><span class="kicker">Instagram</span><span class="v">@denissearmijospdp</span></a>
       </div>
     </div>
   </section>
