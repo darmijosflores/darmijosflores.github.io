@@ -11,10 +11,12 @@
 <meta property="og:description" content="La diferencia entre publicar un documento y garantizar transparencia en el tratamiento de datos personales.">
 <meta property="article:published_time" content="2026-10-21">
 <link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../styles.css">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#102A43">
 <meta property="og:image" content="https://darmijosflores.github.io/og-image.png">
+<script>if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');</script>
 <style>
 /* Layout: página de artículo — cabecera del sitio, portada en azul tinta con la línea naranja,
    cuerpo de lectura a ~68 caracteres con índice lateral fijo en escritorio. */
@@ -24,9 +26,9 @@
   --lavanda: #C2410C;       /* naranja ladrillo: acento */
   --lavanda-claro: #FFFFFF;
   --crema: #FFFFFF;
-  --blanco: #F7F7F5;        /* papel: fondo */
+  --art-bg: #F7F7F5;        /* papel: fondo */
   --gris: #BCCCDC;          /* texto secundario sobre azul */
-  --tinta: #334E68;         /* texto secundario sobre claro */
+  --art-t2: #334E68;         /* texto secundario sobre claro */
   --linea: #D9DEE3;         /* niebla: líneas y bordes */
   --acento: #B23A0A;        /* naranja para textos pequeños */
 
@@ -40,24 +42,13 @@ img { max-width: 100%; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--blanco); color: var(--carbon); font-family: var(--body); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--art-bg); color: var(--carbon); font-family: var(--body); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outline-offset: 3px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 @media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } body { font-size: 17px; } }
 .kicker { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 
-/* Cabecera */
-header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--blanco); border-bottom: 1px solid var(--linea); }
-header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 22px; }
-.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
-.brand svg { width: 30px; height: 31px; color: var(--carbon); --d1: #C2410C; --d2: #E7C0AF; }
-.brand span { font-family: var(--display); font-weight: 400; font-size: 27px; line-height: 1; }
-nav.main { display: flex; gap: 24px; margin-left: auto; }
-nav.main a { white-space: nowrap; font-family: var(--display); font-size: 18px; text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
-nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda); }
-.back { display: none; margin-left: auto; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-@media (max-width: 1240px) { nav.main { display: none; } .back { display: inline-flex; } .brand span { font-size: 22px; } }
 
 /* Portada del artículo */
 .art-hero { background: var(--carbon); color: #F7F7F5; position: relative; overflow: hidden; }
@@ -76,7 +67,7 @@ nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda)
 .toc { position: sticky; top: 110px; align-self: start; }
 .toc .kicker { color: var(--acento); display: block; margin-bottom: 16px; }
 .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 1px solid var(--linea); }
-.toc a { display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 2px solid transparent; font-size: 14px; line-height: 1.4; text-decoration: none; color: var(--tinta); }
+.toc a { display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 2px solid transparent; font-size: 14px; line-height: 1.4; text-decoration: none; color: var(--art-t2); }
 .toc a:hover { color: var(--carbon); }
 .toc a.active { border-left-color: var(--lavanda); color: var(--carbon); font-weight: 600; }
 @media (max-width: 980px) { .layout { grid-template-columns: 1fr; gap: 0; padding-block: 48px 72px; } .toc { display: none; } }
@@ -107,7 +98,7 @@ figure.layers { margin: 36px 0 40px; }
 .layer ul.mini li::before { width: 5px; height: 5px; top: 9px; left: 0; }
 .arrow { display: grid; place-items: center; color: var(--carbon); }
 .arrow svg { width: 28px; height: 14px; }
-figure.layers figcaption { font-size: 14px; color: var(--tinta); margin-top: 12px; }
+figure.layers figcaption { font-size: 14px; color: var(--art-t2); margin-top: 12px; }
 @media (max-width: 640px) { .layers-grid { grid-template-columns: 1fr; } .arrow { height: 36px; transform: rotate(90deg); } }
 
 /* Referencias y cierre */
@@ -115,19 +106,14 @@ figure.layers figcaption { font-size: 14px; color: var(--tinta); margin-top: 12p
 .refs h2 { margin-top: 0; font-size: 26px; }
 .refs ol { margin: 0; padding-left: 22px; display: grid; gap: 12px; font-size: 15px; line-height: 1.55; }
 .refs a { color: var(--acento); overflow-wrap: anywhere; }
-.disclaimer { margin-top: 32px; font-size: 14px; font-style: italic; color: var(--tinta); }
+.disclaimer { margin-top: 32px; font-size: 14px; font-style: italic; color: var(--art-t2); }
 .author { margin-top: 56px; background: var(--crema); border: 1px solid var(--linea); padding: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; }
 .author svg { width: 48px; height: 50px; color: var(--carbon); --d1: #C2410C; --d2: #E7C0AF; }
-.author p { margin: 0; font-size: 15px; color: var(--tinta); }
+.author p { margin: 0; font-size: 15px; color: var(--art-t2); }
 .author strong { font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--carbon); display: block; }
 .more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 600; color: var(--acento); letter-spacing: .18em; text-transform: uppercase; margin-top: 40px; }
 .more svg { width: 28px; height: 14px; }
 
-footer { background: var(--blanco); border-top: 1px solid var(--linea); }
-footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-block: 40px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
-footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--carbon); }
-footer .firma { font-family: var(--display); font-style: italic; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--carbon); }
-footer .firma em { color: var(--acento); }
 </style>
 </head>
 <body>
@@ -139,28 +125,60 @@ footer .firma em { color: var(--acento); }
     <path fill="currentColor" fill-rule="evenodd" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
   </symbol>
   <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="cal" viewBox="0 0 18 18"><rect x="1.5" y="3" width="15" height="13" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 7h15M5.5 1v4M12.5 1v4" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.76-2.06 4.02 0 4.76 2.6 4.76 6v5.46h-4v-4.84c0-1.16-.02-2.64-1.6-2.64-1.62 0-1.86 1.26-1.86 2.56v4.92H10z"/></symbol>
+  <symbol id="instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 8V3H3v13h5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-datos-personales" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="24" y="38" width="24" height="28" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="16" y="26" width="68" height="48" rx="8"/><circle cx="36" cy="45" r="7"/><path d="M26 64 Q36 52 46 64"/><path d="M57 42 H74 M57 52 H74 M57 62 H67"/></g></symbol>
+  <symbol id="i-politica-por-capas" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="34" y="18" width="40" height="50" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M34 26 V24 a6 6 0 0 1 6 -6 H68 a6 6 0 0 1 6 6 V62 a6 6 0 0 1 -6 6 H66"/><rect x="26" y="26" width="40" height="54" rx="6"/><path d="M34 40 H58 M34 50 H58 M34 60 H50"/></g></symbol>
+  <symbol id="i-base-legal" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="62" width="40" height="18" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M56 30 C54 26 44 26 44 31 C44 36 56 36 56 41 C56 45 52 47 48 47"/><path d="M44 54 C46 58 56 58 56 53 C56 48 44 48 44 43 C44 39 48 37 52 37"/><path d="M36 72 H64"/></g></symbol>
+  <symbol id="i-evidencia" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="51" cy="54" r="15"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M16 76 V28 a6 6 0 0 1 6 -6 H38 L46 30 H78 a6 6 0 0 1 6 6 V76 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 Z"/><path d="M40 54 L48 62 L64 44"/></g></symbol>
+  <symbol id="i-evaluacion-de-impacto" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M50 68 L18 68 A32 32 0 0 1 27.4 45.4 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 68 A32 32 0 0 1 82 68"/><path d="M50 68 L68 42"/><circle cx="50" cy="68" r="4"/><path d="M50 36 V42 M73 45 L69 49"/></g></symbol>
+  <symbol id="i-riesgo" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M32 60 H68 L78 78 H22 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M50 16 L86 80 H14 Z"/><path d="M50 38 V56 M50 68 V68.5"/></g></symbol>
+  <symbol id="i-contrato-con-encargado" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="54" y="30" width="32" height="44" rx="5"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="14" y="26" width="32" height="44" rx="5"/><rect x="54" y="30" width="32" height="44" rx="5"/><path d="M21 38 H39 M21 47 H39 M61 42 H79 M61 51 H79"/><path d="M38 62 Q50 80 62 66"/></g></symbol>
+  <symbol id="i-inteligencia-artificial" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="30" width="40" height="40" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="30" y="30" width="40" height="40" rx="6"/><rect x="41" y="41" width="18" height="18" rx="3"/><path d="M40 30 V20 M50 30 V20 M60 30 V20 M40 70 V80 M50 70 V80 M60 70 V80 M30 40 H20 M30 50 H20 M30 60 H20 M70 40 H80 M70 50 H80 M70 60 H80"/></g></symbol>
+  <symbol id="i-ciberseguridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="34" cy="50" r="14"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="34" cy="50" r="14"/><circle cx="34" cy="50" r="4"/><path d="M48 50 H84 M72 50 V62 M82 50 V58"/></g></symbol>
+  <symbol id="i-conectividad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M45 58 L40 80 H60 L55 58 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="50" cy="34" r="5"/><path d="M50 40 L38 84 M50 40 L62 84 M42 70 H58"/><path d="M38 22 C32 28 32 40 38 46 M30 15 C20 25 20 43 30 53 M62 22 C68 28 68 40 62 46 M70 15 C80 25 80 43 70 53"/></g></symbol>
+  <symbol id="i-resolucion-de-autoridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="62" cy="68" r="11"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M34 34 H56 M34 44 H66 M34 54 H58"/><circle cx="62" cy="68" r="11"/><path d="M57 68 L61 72 L68 64"/></g></symbol>
+  <symbol id="i-analisis" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="42" cy="42" r="18"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="42" cy="42" r="22"/><path d="M58 58 L82 82 M32 38 a11 11 0 0 1 11 -9"/></g></symbol>
 </svg>
 
-<header class="site">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site" id="top">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Denisse Armijos, inicio">
-      <svg aria-hidden="true"><use href="#logo-d"/></svg>
-      <span>Denisse Armijos</span>
+      <svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="name">Denisse Armijos</span>
     </a>
     <nav class="main" aria-label="Principal">
       <a href="../">Inicio</a>
       <a href="../perfil.html">Sobre mí</a>
-      <a href="../#especializacion">Especialización</a>
-      <a href="../#publicaciones" aria-current="page">Publicaciones</a>
-      <a href="../#observatorio">Observatorio</a>
-      <a href="../#investigacion">Investigación</a>
-      <a href="../#contacto">Contacto</a>
+      <a href="../especializacion.html">Especialización</a>
+      <a href="../publicaciones.html" aria-current="page">Publicaciones</a>
+      <a href="../observatorio.html">Observatorio</a>
+      <a href="../investigacion.html">Investigación</a>
+      <a href="../contacto.html">Contacto</a>
     </nav>
-    <a class="back" href="../#publicaciones">← Publicaciones</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+      <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M0 1h28M0 10h28M0 19h28" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
+    <div class="wrap">
+      <a href="../">Inicio</a>
+      <a href="../perfil.html">Sobre mí</a>
+      <a href="../especializacion.html">Especialización</a>
+      <a href="../publicaciones.html" aria-current="page">Publicaciones</a>
+      <a href="../observatorio.html">Observatorio</a>
+      <a href="../investigacion.html">Investigación</a>
+      <a href="../contacto.html">Contacto</a>
+    </div>
+  </nav>
 </header>
 
-<main>
+<main id="contenido">
   <section class="art-hero">
     <div class="wrap">
       <p class="kicker"><span>Transparencia</span><span>·</span><span>Análisis y opinión</span></p>
@@ -310,16 +328,37 @@ footer .firma em { color: var(--acento); }
         <p><strong>Denisse Armijos</strong>Abogada especializada en protección de datos personales, privacidad y tecnología. Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información por la Universidad Carlos III de Madrid.</p>
       </div>
 
-      <a class="more" href="../#publicaciones">Volver a publicaciones <svg><use href="#arrow"/></svg></a>
+      <a class="more" href="../publicaciones.html">Volver a publicaciones <svg><use href="#arrow"/></svg></a>
     </article>
   </div>
 </main>
 
-<footer>
+<section class="talk" aria-labelledby="conversemos">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="Denisse Armijos, inicio"><svg aria-hidden="true"><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
-    <span class="firma">Privacidad con rigor. <em>Tecnología sin miedo.</em></span>
-    <span>Este sitio no usa cookies ni herramientas de rastreo</span>
+    <h2 id="conversemos" data-reveal>Conversemos.</h2>
+    <span class="sep" aria-hidden="true"></span>
+    <p data-reveal style="--d:.1s">Estoy abierta a oportunidades profesionales, colaboraciones académicas y proyectos de consultoría en privacidad, derecho digital y regulación tecnológica.</p>
+    <a class="btn ghost" href="../contacto.html" data-reveal style="--d:.2s"><svg aria-hidden="true"><use href="#mail"/></svg>Escríbeme <svg class="arr" aria-hidden="true"><use href="#arrow"/></svg></a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="f-brand" href="../" aria-label="Denisse Armijos, inicio">
+      <svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg>
+      <span class="sep" aria-hidden="true"></span>
+      <span><strong>Denisse Armijos</strong><span>Abogada · Privacidad · Derecho digital</span></span>
+    </a>
+    <nav class="f-links" aria-label="Información legal">
+      <a href="../aviso-legal.html">Aviso legal</a>
+      <a href="../privacidad.html">Política de privacidad</a>
+    </nav>
+    <div class="f-social">
+      <a href="https://www.linkedin.com/in/darmijos/" target="_blank" rel="noopener" aria-label="LinkedIn de Denisse Armijos"><svg aria-hidden="true"><use href="#linkedin"/></svg></a>
+      <a href="https://www.instagram.com/denissearmijospdp/" target="_blank" rel="noopener" aria-label="Instagram de Denisse Armijos"><svg aria-hidden="true"><use href="#instagram"/></svg></a>
+      <a href="mailto:darmijosflores@gmail.com" aria-label="Escribir a Denisse Armijos"><svg aria-hidden="true"><use href="#mail"/></svg></a>
+    </div>
+    <div class="f-note"><span>Este sitio no usa cookies ni herramientas de rastreo</span><span>© 2026 Denisse Armijos</span></div>
   </div>
 </footer>
 
@@ -336,5 +375,6 @@ footer .firma em { color: var(--acento); }
   update();
 })();
 </script>
+<script src="../site.js" defer></script>
 </body>
 </html>
