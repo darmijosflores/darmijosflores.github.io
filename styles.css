@@ -118,6 +118,7 @@ a.area:hover { border-color: var(--senal); transform: translateY(-2px); }
 /* ---------- Banda "Conversemos" ---------- */
 .talk { background: var(--tinta); color: var(--papel); }
 .talk .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px 48px; padding-block: 56px; }
+.talk .btn { margin-left: auto; }
 .talk h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1; letter-spacing: -.01em; margin: 0; }
 @media (max-width: 600px) { .talk .wrap { padding-block: 44px; } }
 
