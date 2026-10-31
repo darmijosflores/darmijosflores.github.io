@@ -113,26 +113,33 @@ nav.main a:hover { border-bottom-color: var(--senal); }
   .brand span { font-size: 23px; }
 }
 
-/* ---------- Hero ---------- */
-.hero { position: relative; overflow: hidden; color: var(--papel); background: var(--tinta); }
-.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; pointer-events: none; }
-.hero .wrap { position: relative; padding-block: 72px 0; min-height: 600px; display: flex; flex-direction: column; }
-.hero .firma { margin: 0 0 28px; color: var(--senal-suave); }
+/* ---------- Hero ----------
+   Banner limpio: texto sobre papel a la izquierda; a la derecha, la fotografía de una inscripción grabada en piedra
+   que llega hasta el borde y se funde con el papel. La piedra grabada evoca el derecho: lo que queda escrito. */
+.hero { position: relative; overflow: hidden; background: var(--papel); border-bottom: 1px solid var(--niebla); }
+.hero .wrap { position: relative; z-index: 1; min-height: clamp(440px, 46vw, 560px); display: flex; flex-direction: column; justify-content: center; padding-block: 72px; }
 .hero h1 {
-  font-family: var(--display); font-weight: 400; letter-spacing: -.015em;
-  font-size: clamp(46px, 7.4vw, 96px); line-height: .98; margin: 0; max-width: 13ch; text-wrap: balance;
+  font-family: var(--display); font-weight: 400; letter-spacing: -.02em; color: var(--tinta);
+  font-size: clamp(42px, 4.4vw, 66px); line-height: 1.06; margin: 0;
 }
-.hero h1 em { font-style: italic; color: var(--senal-claro); }
-.hero .sub { margin: 28px 0 0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; color: var(--texto-azul-2); }
-.signature { margin-top: auto; position: relative; height: 170px; }
-.signature svg.d { position: absolute; left: 0; bottom: 48px; width: 96px; height: 99px; }
-.signature .rule { position: absolute; left: 116px; right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); bottom: 48px; height: 9px; background: var(--senal); }
-@media (max-width: 640px) {
-  .hero .wrap { min-height: 540px; padding-block: 48px 0; }
-  .signature { height: 130px; }
-  .signature svg.d { width: 64px; height: 66px; bottom: 36px; }
-  .signature .rule { left: 80px; height: 6px; bottom: 36px; }
+.hero h1 > span { display: block; white-space: nowrap; }
+.hero h1 .punto { color: var(--senal); }
+.hero .rule { width: 56px; height: 4px; background: var(--senal); margin: 32px 0 22px; }
+.hero .sub { margin: 0; font-size: clamp(16px, 1.4vw, 19px); max-width: 34ch; color: var(--texto-2); }
+.hero .media { position: absolute; top: 0; right: 0; bottom: 0; width: 54%; margin: 0; }
+.hero .media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; display: block;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 30%);
 }
+@media (max-width: 860px) {
+  .hero { display: flex; flex-direction: column; }
+  .hero .media { position: relative; width: 100%; aspect-ratio: 4 / 3; max-height: 420px; }
+  .hero .media img { object-position: 92% 70%; -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); }
+  .hero .wrap { min-height: 0; padding-block: 0 56px; margin-top: -24px; }
+  .hero h1 > span { white-space: normal; }
+}
+@media (max-width: 480px) { .hero h1 { font-size: 35px; } }
 
 /* ---------- Section heads ---------- */
 section { scroll-margin-top: 90px; }
@@ -338,15 +345,16 @@ footer .brand span { font-size: 32px; }
 
 <main id="inicio">
   <section class="hero" aria-label="Presentación">
-    <canvas id="field" aria-hidden="true"></canvas>
+    <figure class="media" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="img/banner-inscripcion-900.webp 900w, img/banner-inscripcion.webp 1600w" sizes="(max-width: 860px) 100vw, 54vw">
+        <img src="img/banner-inscripcion.jpg" srcset="img/banner-inscripcion-900.jpg 900w, img/banner-inscripcion.jpg 1600w" sizes="(max-width: 860px) 100vw, 54vw" width="1600" height="972" alt="" fetchpriority="high">
+      </picture>
+    </figure>
     <div class="wrap">
-      <p class="kicker firma">Privacidad con rigor. Tecnología sin miedo.</p>
-      <h1>No basta con cumplir; <em>hay que poder demostrarlo.</em></h1>
-      <p class="sub">Protección de datos, tecnología y gestión del riesgo, con rigor jurídico y enfoque práctico.</p>
-      <div class="signature" aria-hidden="true">
-        <svg class="d mark on-dark"><use href="#logo-d"/></svg>
-        <div class="rule"></div>
-      </div>
+      <h1><span>Privacidad con rigor.</span> <span>Tecnología sin miedo<span class="punto">.</span></span></h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="sub">Protección de datos personales y derecho digital, con rigor jurídico y enfoque práctico.</p>
     </div>
   </section>
 
@@ -568,29 +576,6 @@ footer .brand span { font-size: 32px; }
     });
   });
 
-  // Campo de puntos: una retícula de datos que se aclara hacia la derecha, detrás del titular.
-  // Algunos puntos toman el naranja de la marca.
-  var c = document.getElementById('field'), ctx = c.getContext('2d');
-  function draw() {
-    var r = window.devicePixelRatio || 1, w = c.clientWidth, h = c.clientHeight;
-    c.width = w * r; c.height = h * r; ctx.setTransform(r, 0, 0, r, 0, 0); ctx.clearRect(0, 0, w, h);
-    var step = 22;
-    for (var y = step; y < h; y += step) {
-      for (var x = step; x < w; x += step) {
-        var t = x / w;
-        var wave = Math.sin(x * 0.012 + y * 0.018) * 0.5 + 0.5;
-        var a = Math.max(0, (t - 0.35)) * 1.3 * (0.35 + wave * 0.65);
-        if (a <= 0.02) continue;
-        var warm = ((x / step) * 7 + (y / step) * 13) % 23 === 0;
-        ctx.fillStyle = warm ? 'rgba(232,105,47,' + Math.min(a * 1.4, 0.95).toFixed(3) + ')'
-                             : 'rgba(247,247,245,' + Math.min(a, 0.85).toFixed(3) + ')';
-        var s = warm ? 2.6 : 1 + wave * 1.4;
-        ctx.fillRect(x, y, s, s);
-      }
-    }
-  }
-  draw();
-  window.addEventListener('resize', draw);
 })();
 </script>
 </body>
