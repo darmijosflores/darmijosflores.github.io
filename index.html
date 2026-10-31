@@ -151,10 +151,14 @@ section { scroll-margin-top: 90px; }
 .perfil .quote em { color: var(--senal-texto); }
 .perfil p { max-width: 62ch; margin: 0 0 18px; }
 .perfil p.muted { color: var(--texto-2); }
+.perfil .more { margin-top: 28px; }
 .perfil p.creo { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; margin-top: 28px; }
-.portrait { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; background: var(--blanco); border: 1px solid var(--niebla); position: relative; display: grid; place-items: center; }
-.portrait svg { width: 40%; height: auto; aspect-ratio: 245 / 252; }
-.portrait figcaption { position: absolute; left: 20px; bottom: 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--texto-2); }
+.portrait { margin: 0; max-width: 100%; position: relative; display: block; text-decoration: none; }
+.portrait::before { content: ""; position: absolute; inset: 0; transform: translate(14px, -14px); background: var(--senal); }
+.portrait img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.portrait-cta { position: absolute; left: 0; bottom: 0; background: var(--tinta); color: var(--papel); display: inline-flex; align-items: center; gap: 12px; padding: 14px 20px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.portrait-cta svg { width: 24px; height: 12px; transition: transform .2s; }
+.portrait:hover .portrait-cta svg { transform: translateX(4px); }
 .degree { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--niebla); }
 .degree h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.3; margin: 10px 0 6px; }
 .degree p { margin: 0; color: var(--texto-2); font-size: 15px; }
@@ -306,7 +310,7 @@ footer .brand span { font-size: 32px; }
       <span>Denisse Armijos</span>
     </a>
     <nav class="main" aria-label="Principal">
-      <a href="#perfil">Perfil</a>
+      <a href="perfil.html">Perfil</a>
       <a href="#especializacion">Especialización</a>
       <a href="#publicaciones">Publicaciones</a>
       <a href="#observatorio">Observatorio</a>
@@ -322,7 +326,7 @@ footer .brand span { font-size: 32px; }
   </div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
     <div class="wrap">
-      <a href="#perfil">Perfil</a>
+      <a href="perfil.html">Perfil</a>
       <a href="#especializacion">Especialización</a>
       <a href="#publicaciones">Publicaciones</a>
       <a href="#observatorio">Observatorio</a>
@@ -356,16 +360,17 @@ footer .brand span { font-size: 32px; }
         <p class="muted">He participado en diagnósticos de cumplimiento, identificación de actividades de tratamiento, análisis y evaluación de riesgos, evaluaciones de impacto, elaboración de instrumentos jurídicos y políticas institucionales, y diseño de procedimientos para la gestión de datos personales. También he trabajado en la delimitación de responsabilidades entre los actores del tratamiento, la privacidad desde el diseño y por defecto, y la construcción de mecanismos de gobernanza y responsabilidad proactiva.</p>
         <p class="muted">Analizo lo que deciden las autoridades de protección de datos de Europa y América Latina y lo traduzco a lo que significa para Ecuador.</p>
         <p class="creo">Creo que la tecnología se puede explicar sin jerga, y que hay que hacerlo sin miedo.</p>
+        <a class="more" href="perfil.html">Trayectoria, formación y certificaciones <svg aria-hidden="true"><use href="#arrow"/></svg></a>
         <div class="degree">
           <span class="kicker" style="color:var(--senal-texto)">Formación</span>
-          <h3>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Sociedad de la Información y Audiovisual</h3>
+          <h3>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Audiovisual y Sociedad de la Información</h3>
           <p>Universidad Carlos III de Madrid, España</p>
         </div>
       </div>
-      <figure class="portrait">
-        <svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg>
-        <figcaption>Fotografía próximamente</figcaption>
-      </figure>
+      <a class="portrait" href="perfil.html" aria-label="Ver el perfil completo de Denisse Armijos">
+        <img src="img/denisse-armijos.jpg" width="520" height="650" alt="Retrato de Denisse Armijos con los brazos cruzados, de suéter negro y gafas, sobre una pared clara.">
+        <span class="portrait-cta">Perfil completo <svg aria-hidden="true"><use href="#arrow"/></svg></span>
+      </a>
     </div>
   </section>
 
@@ -507,8 +512,8 @@ footer .brand span { font-size: 32px; }
       <p class="lead">Abierta a colaboraciones profesionales y académicas, proyectos de consultoría y oportunidades en derecho digital, privacidad y ciberseguridad.</p>
       <div class="channels">
         <a class="channel" href="https://www.instagram.com/denissearmijospdp/" rel="noopener" target="_blank"><span class="kicker">Instagram</span><span>@denissearmijospdp</span></a>
-        <div class="channel"><span class="kicker">LinkedIn</span><span>Próximamente</span></div>
-        <div class="channel"><span class="kicker">Correo profesional</span><span>Próximamente</span></div>
+        <a class="channel" href="https://www.linkedin.com/in/darmijos/" rel="noopener" target="_blank"><span class="kicker">LinkedIn</span><span>in/darmijos</span></a>
+        <a class="channel" href="mailto:darmijosflores@gmail.com"><span class="kicker">Correo</span><span>darmijosflores@gmail.com</span></a>
       </div>
       <p class="firma">Privacidad con rigor. <em>Tecnología sin miedo.</em></p>
     </div>
@@ -522,7 +527,7 @@ footer .brand span { font-size: 32px; }
       <a class="totop" href="#top">Volver arriba <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 8l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
     <nav class="foot-nav" aria-label="Pie de página">
-      <a href="#perfil">Perfil</a>
+      <a href="perfil.html">Perfil</a>
       <a href="#especializacion">Especialización</a>
       <a href="#publicaciones">Publicaciones</a>
       <a href="#observatorio">Observatorio</a>
