@@ -56,14 +56,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 
 /* Portada de la biografía */
 .masthead { background: var(--tinta); color: var(--papel); position: relative; overflow: hidden; }
-.masthead .wrap { padding-block: 64px 0; position: relative; }
-.masthead .kicker { color: var(--senal-suave); margin: 0 0 18px; }
+.masthead .wrap { padding-block: 72px 56px; position: relative; }
 .masthead h1 { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 112px); line-height: .95; letter-spacing: -.02em; margin: 0; }
 .masthead .tag { font-family: var(--display); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); margin: 20px 0 0; color: var(--texto-azul-2); }
 .masthead .tag em { color: var(--senal-claro); }
-.masthead .line { display: flex; align-items: center; gap: 20px; margin-top: 48px; height: 72px; }
-.masthead .line svg { width: 58px; height: 60px; flex: none; }
-.masthead .line div { flex: 1; height: 7px; background: var(--senal); margin-right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); }
+/* Línea naranja que se dibuja de izquierda a derecha al cargar, como en la portada del inicio */
+.masthead .line { margin-top: 48px; height: 5px; background: var(--senal); margin-right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); transform-origin: left; }
+.anim .masthead .line { transform: scaleX(0); animation: traza 1.2s .35s cubic-bezier(.6,0,.2,1) forwards; }
+@keyframes traza { to { transform: scaleX(1); } }
+@media (max-width: 640px) { .masthead .wrap { padding-block: 48px 40px; } .masthead .line { margin-top: 36px; height: 4px; } }
 
 /* Foto + biografía */
 .bio-sec { padding-block: 80px 104px; }
@@ -193,10 +194,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 <main id="contenido">
   <section class="masthead" aria-labelledby="nombre">
     <div class="wrap">
-      <p class="kicker">Abogada · Protección de datos y derecho digital</p>
       <h1 id="nombre">Denisse Armijos</h1>
       <p class="tag">Privacidad con rigor. <em>Tecnología sin miedo.</em></p>
-      <div class="line" aria-hidden="true"><svg class="mark on-dark"><use href="#logo-d"/></svg><div></div></div>
+      <div class="line" aria-hidden="true"></div>
     </div>
   </section>
 
