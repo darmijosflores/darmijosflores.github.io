@@ -3,25 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Denisse Armijos</title>
-<meta name="description" content="Denisse Armijos — Abogada especializada en protección de datos personales, privacidad y tecnología.">
+<title>Denisse Armijos · Protección de datos y derecho digital</title>
+<meta name="description" content="Denisse Armijos, abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho digital. Privacidad con rigor. Tecnología sin miedo.">
+<meta name="author" content="Denisse Armijos">
+<meta name="theme-color" content="#102A43">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Denisse Armijos · Protección de datos y derecho digital">
+<meta property="og:description" content="Abogada en protección de datos y derecho digital. Privacidad con rigor. Tecnología sin miedo.">
+<meta property="og:url" content="https://darmijosflores.github.io/">
+<meta property="og:image" content="https://darmijosflores.github.io/og-image.png">
+<meta property="og:locale" content="es_EC">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-/* Layout: estilo despacho editorial — cabecera blanca, hero a sangre en lavanda con la D y una línea que cruza la página,
-   títulos serif grandes con enlace en versalitas a la derecha, tarjetas planas de color y una banda de color a ancho completo. */
+/* Layout: marca Denisse Armijos (ruta A, rigor editorial) — fondo papel, bloques en azul tinta,
+   un solo acento naranja ladrillo. Títulos en Newsreader, textos en IBM Plex Sans.
+   El isotipo es la D con capas; los iconos repiten su gesto: relleno naranja desplazado arriba a la derecha. */
 :root {
-  --carbon: #111214;
-  --lavanda: #A196D1;
-  --lavanda-claro: #D4CAF0;
-  --crema: #F5F0ED;
+  --tinta: #102A43;        /* azul: textos, logotipo, bloques */
+  --papel: #F7F7F5;        /* fondos */
+  --senal: #C2410C;        /* naranja ladrillo: acento */
+  --senal-texto: #B23A0A;  /* naranja para textos pequeños sobre claro */
+  --senal-claro: #E8692F;  /* naranja sobre fondo azul */
+  --senal-suave: #F4A27A;  /* etiquetas pequeñas sobre fondo azul */
+  --niebla: #D9DEE3;       /* líneas y bordes */
   --blanco: #FFFFFF;
-  --gris: #C4BFC7;
-  --tinta: #2A2830;        /* texto secundario */
-  --linea: #E4DEE6;
+  --texto-2: #334E68;      /* texto secundario sobre claro */
+  --texto-azul-2: #BCCCDC; /* texto secundario sobre azul */
 
-  --display: "Bauer Bodoni", "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
-  --body: "Arimo", "Helvetica Neue", Arial, sans-serif;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", Arial, "Helvetica Neue", sans-serif;
 
   --max: 1180px;
   color-scheme: light;
@@ -34,15 +47,15 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 body {
   margin: 0;
-  background: var(--blanco);
-  color: var(--carbon);
+  background: var(--papel);
+  color: var(--tinta);
   font-family: var(--body);
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline-offset: 3px; }
 
 .wrap {
   max-width: var(--max);
@@ -58,219 +71,238 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outli
   font-family: var(--body); font-size: 12px; font-weight: 600;
   letter-spacing: .16em; text-transform: uppercase;
 }
-.date { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+.date { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
 .date svg { width: 18px; height: 18px; flex: none; }
+
+/* Isotipo e iconos: sus colores se controlan con variables */
+.mark { --d1: var(--senal); --d2: #E7C0AF; color: var(--tinta); }
+.mark.on-dark { --d1: var(--senal); --d2: #69362A; color: var(--papel); }
+.ico { width: 64px; height: 64px; flex: none; --ic-line: var(--tinta); --ic-fill: var(--senal); }
 
 /* ---------- Header ---------- */
 header.site {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
-  background: var(--blanco);
+  background: var(--papel);
   border-bottom: 1px solid transparent;
 }
-header.site.scrolled { border-bottom-color: var(--linea); }
-header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 22px; }
-.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
-.brand svg { width: 26px; height: 27px; color: var(--carbon); }
-.brand span { font-family: var(--display); font-weight: 500; font-size: 26px; letter-spacing: -.005em; line-height: 1; }
+header.site.scrolled { border-bottom-color: var(--niebla); }
+header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
+.brand svg { width: 30px; height: 31px; }
+.brand span { font-family: var(--display); font-weight: 400; font-size: 27px; letter-spacing: -.005em; line-height: 1; }
 nav.main { display: flex; gap: 28px; margin-left: auto; }
-nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; color: var(--carbon); padding-block: 4px; border-bottom: 1px solid transparent; transition: border-color .2s; }
-nav.main a:hover { border-bottom-color: var(--lavanda); }
+nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; color: var(--tinta); padding-block: 4px; border-bottom: 2px solid transparent; transition: border-color .2s; }
+nav.main a:hover { border-bottom-color: var(--senal); }
 .tools { display: flex; align-items: center; gap: 14px; flex: none; }
 .lang {
   font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: .16em;
-  background: var(--gris); color: var(--blanco); padding: 9px 14px; display: inline-flex; gap: 8px; align-items: center;
+  background: var(--tinta); color: var(--papel); padding: 9px 14px; display: inline-flex; gap: 8px; align-items: center;
   border: 0; cursor: default;
 }
-.menu-btn { display: none; background: none; border: 0; padding: 6px; cursor: pointer; color: var(--carbon); }
+.menu-btn { display: none; background: none; border: 0; padding: 10px; margin: -4px; cursor: pointer; color: var(--tinta); }
 .menu-btn svg { width: 30px; height: 22px; }
 .mobile-nav { display: none; }
 @media (max-width: 1100px) {
   nav.main { display: none; }
   .tools { margin-left: auto; }
   .menu-btn { display: block; }
-  .mobile-nav { border-top: 1px solid var(--linea); }
+  .mobile-nav { border-top: 1px solid var(--niebla); }
   .mobile-nav.open { display: block; }
   .mobile-nav .wrap { display: grid; gap: 4px; padding-block: 12px 24px; }
   .mobile-nav a { font-family: var(--display); font-size: 24px; text-decoration: none; padding-block: 6px; }
-  .brand span { font-size: 22px; }
+  .brand span { font-size: 23px; }
 }
 
 /* ---------- Hero ---------- */
-.hero {
-  position: relative; overflow: hidden; color: var(--blanco);
-  background:
-    radial-gradient(60% 80% at 82% 70%, rgba(212,202,240,.95) 0%, rgba(212,202,240,0) 60%),
-    radial-gradient(45% 60% at 65% 25%, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 60%),
-    radial-gradient(70% 90% at 10% 100%, rgba(80,64,150,.55) 0%, rgba(80,64,150,0) 65%),
-    linear-gradient(120deg, #8F82C6 0%, #A196D1 45%, #B9AEE0 100%);
-}
-.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; pointer-events: none; }
+.hero { position: relative; overflow: hidden; color: var(--papel); background: var(--tinta); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; pointer-events: none; }
 .hero .wrap { position: relative; padding-block: 72px 0; min-height: 600px; display: flex; flex-direction: column; }
+.hero .firma { margin: 0 0 28px; color: var(--senal-suave); }
 .hero h1 {
-  font-family: var(--display); font-weight: 500; letter-spacing: -.015em;
+  font-family: var(--display); font-weight: 400; letter-spacing: -.015em;
   font-size: clamp(46px, 7.4vw, 96px); line-height: .98; margin: 0; max-width: 13ch; text-wrap: balance;
 }
-.hero h1 em { font-style: italic; }
-.hero .sub { margin: 28px 0 0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; color: rgba(255,255,255,.92); }
+.hero h1 em { font-style: italic; color: var(--senal-claro); }
+.hero .sub { margin: 28px 0 0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; color: var(--texto-azul-2); }
 .signature { margin-top: auto; position: relative; height: 170px; }
-.signature svg.d { position: absolute; left: 0; bottom: 48px; width: 96px; height: 100px; color: var(--blanco); }
-.signature .rule { position: absolute; left: 110px; right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); bottom: 48px; height: 9px; background: var(--blanco); }
+.signature svg.d { position: absolute; left: 0; bottom: 48px; width: 96px; height: 99px; }
+.signature .rule { position: absolute; left: 116px; right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); bottom: 48px; height: 9px; background: var(--senal); }
 @media (max-width: 640px) {
-  .hero .wrap { min-height: 520px; padding-block: 48px 0; }
+  .hero .wrap { min-height: 540px; padding-block: 48px 0; }
   .signature { height: 130px; }
   .signature svg.d { width: 64px; height: 66px; bottom: 36px; }
-  .signature .rule { left: 74px; height: 6px; bottom: 36px; }
+  .signature .rule { left: 80px; height: 6px; bottom: 36px; }
 }
 
 /* ---------- Section heads ---------- */
 section { scroll-margin-top: 90px; }
 .sec { padding-block: 104px; }
 .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
-.sec-head h2 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
-.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+.sec-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--senal-texto); }
 .more svg { width: 28px; height: 14px; transition: transform .2s; }
 .more:hover svg { transform: translateX(4px); }
 @media (max-width: 640px) { .sec { padding-block: 72px; } .sec-head { margin-bottom: 36px; } }
 
 /* ---------- Perfil ---------- */
 .perfil { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 72px; align-items: start; }
-.perfil .role { margin: 0 0 28px; color: var(--tinta); }
+.perfil .name { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: -.01em; margin: 0 0 28px; }
 .perfil .quote { font-family: var(--display); font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 0 0 32px; text-wrap: balance; }
-.perfil .quote em { color: #7A6DB8; }
+.perfil .quote em { color: var(--senal-texto); }
 .perfil p { max-width: 62ch; margin: 0 0 18px; }
-.perfil p.muted { color: var(--tinta); }
-.portrait { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; background: var(--crema); position: relative; display: grid; place-items: center; }
-.portrait svg { width: 34%; height: auto; color: var(--carbon); }
-.portrait figcaption { position: absolute; left: 20px; bottom: 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--tinta); }
-.degree { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--linea); }
+.perfil p.muted { color: var(--texto-2); }
+.perfil p.creo { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; margin-top: 28px; }
+.portrait { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; background: var(--blanco); border: 1px solid var(--niebla); position: relative; display: grid; place-items: center; }
+.portrait svg { width: 40%; height: auto; aspect-ratio: 245 / 252; }
+.portrait figcaption { position: absolute; left: 20px; bottom: 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--texto-2); }
+.degree { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--niebla); }
 .degree h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.3; margin: 10px 0 6px; }
-.degree p { margin: 0; color: var(--tinta); font-size: 15px; }
+.degree p { margin: 0; color: var(--texto-2); font-size: 15px; }
 @media (max-width: 860px) { .perfil { grid-template-columns: 1fr; gap: 48px; } .portrait { max-width: 380px; } }
 
-/* ---------- Tarjetas de color ---------- */
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
-.card { padding: 32px 30px 30px; display: flex; flex-direction: column; gap: 14px; min-height: 230px; min-width: 0; background: var(--lavanda-claro); }
-.card.c2 { background: var(--crema); }
-.card.c3 { background: var(--lavanda); }
+/* ---------- Tarjetas ---------- */
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.card { padding: 28px 28px 30px; display: flex; flex-direction: column; gap: 14px; min-height: 280px; min-width: 0; background: var(--blanco); border: 1px solid var(--niebla); }
+.card .kicker { color: var(--senal-texto); }
+.card.dark { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
+.card.dark .kicker { color: var(--senal-suave); }
+.card.dark .ico { --ic-line: var(--papel); --ic-fill: var(--senal-claro); }
 .card h3 { font-family: var(--display); font-weight: 500; font-size: 25px; line-height: 1.18; margin: 0; text-wrap: balance; }
-.card p { margin: auto 0 0; font-size: 15px; line-height: 1.55; color: var(--tinta); }
-.card.c3 p { color: var(--carbon); }
+.card p { margin: auto 0 0; font-size: 15px; line-height: 1.55; color: var(--texto-2); }
+.card.dark p { color: var(--texto-azul-2); }
 @media (max-width: 1080px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .cards { grid-template-columns: 1fr; gap: 16px; } .card { min-height: 0; } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; gap: 16px; } .card { min-height: 0; } .card p { margin-top: 0; } }
 
 /* ---------- Publicaciones ---------- */
 .feat { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 56px; }
 .lead-story { text-decoration: none; display: grid; gap: 22px; align-content: start; }
 .lead-art {
-  aspect-ratio: 4 / 3; max-width: 100%; background: var(--carbon); position: relative; overflow: hidden;
+  aspect-ratio: 4 / 3; max-width: 100%; background: var(--tinta); position: relative; overflow: hidden;
   display: flex; align-items: flex-end; padding: 36px;
 }
-.lead-art .big-d { position: absolute; right: -6%; top: -10%; width: 72%; height: auto; color: #1E1F24; }
-.lead-art .art-rule { position: absolute; left: 0; right: 0; top: 58%; height: 6px; background: var(--lavanda); }
-.lead-art span { position: relative; font-family: var(--display); font-style: italic; color: var(--crema); font-size: clamp(22px, 2.8vw, 34px); line-height: 1.15; max-width: 16ch; }
-.lead-story .kicker { color: #6A5DAA; }
-.lead-story:hover h3 { text-decoration: underline; text-decoration-color: var(--lavanda); text-underline-offset: 6px; }
+.lead-art .big-d { position: absolute; right: -4%; top: -10%; width: 54%; height: auto; aspect-ratio: 245 / 252; color: #1C3B5A; --d1: #17344F; --d2: #142F48; }
+.lead-art .art-rule { position: absolute; left: 0; right: 0; top: 58%; height: 6px; background: var(--senal); }
+.lead-art span { position: relative; font-family: var(--display); font-style: italic; color: var(--papel); font-size: clamp(22px, 2.8vw, 34px); line-height: 1.15; max-width: 16ch; }
+.lead-story .kicker { color: var(--senal-texto); }
+.lead-story:hover h3 { text-decoration: underline; text-decoration-color: var(--senal); text-underline-offset: 6px; }
 .lead-story h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; margin: 0; text-wrap: balance; }
-.lead-story p { margin: 0; color: var(--tinta); max-width: 58ch; }
+.lead-story p { margin: 0; color: var(--texto-2); max-width: 58ch; }
 .side-list { display: grid; gap: 0; align-content: start; }
-.side-item { padding-block: 26px; border-top: 1px solid var(--linea); display: grid; gap: 10px; }
+.side-item { padding-block: 26px; border-top: 1px solid var(--niebla); display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px 18px; }
+.side-item .ico { width: 44px; height: 44px; grid-row: span 3; }
 .side-item:first-child { border-top: 0; padding-top: 0; }
-.side-item .kicker { color: #6A5DAA; }
+.side-item .kicker { color: var(--senal-texto); }
 .side-item h3 { font-family: var(--display); font-weight: 500; font-size: 24px; line-height: 1.22; margin: 0; text-wrap: balance; }
-@media (max-width: 900px) { .feat { grid-template-columns: 1fr; gap: 40px; } .side-item:first-child { border-top: 1px solid var(--linea); padding-top: 26px; } }
-
+@media (max-width: 900px) { .feat { grid-template-columns: 1fr; gap: 40px; } .side-item:first-child { border-top: 1px solid var(--niebla); padding-top: 26px; } }
 
 /* ---------- Observatorio ---------- */
-.obs-intro { max-width: 62ch; margin: -24px 0 36px; color: var(--tinta); }
+.obs-intro { max-width: 62ch; margin: -24px 0 36px; color: var(--texto-2); }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-.chip { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 10px 16px; border: 1px solid var(--carbon); background: var(--blanco); color: var(--carbon); cursor: pointer; }
-.chip[aria-pressed="true"] { background: var(--carbon); color: var(--blanco); }
+.chip { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 13px 16px; border: 1px solid var(--tinta); background: transparent; color: var(--tinta); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--tinta); color: var(--papel); }
 .obs-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-.ficha { background: var(--crema); padding: 40px; display: grid; gap: 22px; min-width: 0; }
+.ficha { background: var(--blanco); border: 1px solid var(--niebla); padding: 40px; display: grid; gap: 22px; min-width: 0; }
 .ficha-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-.ficha-top .kicker { color: #6A5DAA; }
-.badge { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--tinta); color: var(--tinta); padding: 5px 10px; }
+.ficha-top .kicker { color: var(--senal-texto); }
+.badge { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--texto-2); color: var(--texto-2); padding: 5px 10px; }
 .ficha h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15; margin: 0; text-wrap: balance; }
-.ficha dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); border-top: 1px solid rgba(17,18,20,.14); }
-.ficha dt, .ficha dd { padding: 13px 0; border-bottom: 1px solid rgba(17,18,20,.14); margin: 0; }
-.ficha dt { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); padding-right: 28px; padding-top: 15px; }
+.ficha dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); border-top: 1px solid var(--niebla); }
+.ficha dt, .ficha dd { padding: 13px 0; border-bottom: 1px solid var(--niebla); margin: 0; }
+.ficha dt { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); padding-right: 28px; padding-top: 15px; }
 .ficha dd { font-size: 16px; }
-.ficha .ecuador { background: var(--lavanda-claro); padding: 24px 26px; }
-.ficha .ecuador .kicker { display: block; margin-bottom: 8px; }
+.ficha .ecuador { background: var(--tinta); color: var(--papel); padding: 24px 26px; }
+.ficha .ecuador .kicker { display: block; margin-bottom: 8px; color: var(--senal-suave); }
 .ficha .ecuador p { margin: 0; font-family: var(--display); font-size: 21px; line-height: 1.35; }
 .obs-list { display: grid; gap: 28px; min-width: 0; }
-.obs-card { border-top: 2px solid var(--carbon); padding-top: 18px; display: grid; gap: 8px; }
-.obs-card .kicker { color: #6A5DAA; }
+.obs-card { border-top: 2px solid var(--tinta); padding-top: 18px; display: grid; gap: 8px; }
+.obs-card .kicker { color: var(--senal-texto); }
 .obs-card h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.25; margin: 0; }
-.obs-card p { margin: 0; font-size: 15px; color: var(--tinta); }
-.obs-empty { color: var(--tinta); font-style: italic; }
+.obs-card p { margin: 0; font-size: 15px; color: var(--texto-2); }
+.obs-empty { color: var(--texto-2); font-style: italic; }
 @media (max-width: 900px) { .obs-grid { grid-template-columns: 1fr; } .ficha { padding: 28px 22px; } }
 @media (max-width: 520px) { .ficha dl { grid-template-columns: 1fr; } .ficha dt { padding-bottom: 0; border-bottom: 0; } }
 
-/* ---------- Banda de color ---------- */
-.band { background: var(--lavanda-claro); }
+/* ---------- Investigación (banda azul) ---------- */
+.band { background: var(--tinta); color: var(--papel); }
+.band .more { color: var(--senal-suave); }
 .band-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 64px; align-items: start; }
-.tfm { background: var(--blanco); padding: 44px; display: grid; gap: 18px; }
-.tfm .kicker { color: #6A5DAA; }
+.tfm { background: var(--papel); color: var(--tinta); padding: 44px; display: grid; gap: 18px; }
+.tfm .kicker { color: var(--senal-texto); }
 .tfm h3 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3vw, 38px); line-height: 1.12; margin: 0; text-wrap: balance; }
-.tfm p { margin: 0; color: var(--tinta); max-width: 56ch; }
+.tfm p { margin: 0; color: var(--texto-2); max-width: 56ch; }
 .interest { display: grid; gap: 0; }
-.interest div { padding-block: 20px; border-bottom: 1px solid rgba(17,18,20,.14); }
+.interest div { padding-block: 20px; border-bottom: 1px solid rgba(247,247,245,.2); display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 18px; align-items: center; }
 .interest div:first-child { padding-top: 0; }
-.interest .kicker { display: block; margin-bottom: 4px; }
+.interest .ico { width: 44px; height: 44px; grid-row: span 2; --ic-line: var(--papel); --ic-fill: var(--senal-claro); }
+.interest .kicker { display: block; margin-bottom: 4px; color: var(--senal-suave); }
 .interest span.t { font-family: var(--display); font-size: 23px; line-height: 1.25; }
 @media (max-width: 900px) { .band-grid { grid-template-columns: 1fr; gap: 48px; } .tfm { padding: 28px 24px; } }
 
 /* ---------- Método ---------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; counter-reset: s; }
-.steps li { counter-increment: s; border-top: 2px solid var(--carbon); padding-top: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.steps li::before { content: counter(s, decimal-leading-zero); font-size: 12px; font-weight: 600; letter-spacing: .16em; color: #6A5DAA; font-variant-numeric: tabular-nums; }
+.steps li { counter-increment: s; border-top: 2px solid var(--tinta); padding-top: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-size: 12px; font-weight: 600; letter-spacing: .16em; color: var(--senal-texto); font-variant-numeric: tabular-nums; }
 .steps h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; margin: 0; }
-.steps p { margin: 0; font-size: 15px; color: var(--tinta); }
+.steps p { margin: 0; font-size: 15px; color: var(--texto-2); }
 @media (max-width: 1000px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } }
 @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- Contacto ---------- */
-.contact { background: var(--carbon); color: var(--crema); }
+.contact { background: var(--tinta); color: var(--papel); }
 .contact .sec-head h2 { max-width: 16ch; }
-.contact .lead { color: var(--gris); max-width: 54ch; margin: -24px 0 48px; }
-.channels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 860px; }
-.channel { border-top: 1px solid rgba(245,240,237,.25); padding-top: 20px; display: grid; gap: 6px; text-decoration: none; min-width: 0; }
-.channel .kicker { color: var(--lavanda); }
-.channel span { font-family: var(--display); font-size: 26px; overflow-wrap: anywhere; }
-a.channel:hover span { color: var(--lavanda-claro); }
-@media (max-width: 600px) { .channels { grid-template-columns: 1fr; } }
+.contact .lead { color: var(--texto-azul-2); max-width: 54ch; margin: -24px 0 48px; }
+.channels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.channel { border-top: 1px solid rgba(247,247,245,.25); padding-top: 20px; display: grid; gap: 6px; text-decoration: none; min-width: 0; }
+.channel .kicker { color: var(--senal-suave); }
+.channel span:not(.kicker) { font-family: var(--display); font-size: 26px; overflow-wrap: anywhere; }
+a.channel:hover span:not(.kicker) { color: var(--senal-suave); }
+.contact .firma { margin: 64px 0 0; font-family: var(--display); font-style: italic; font-size: clamp(24px, 2.6vw, 32px); }
+.contact .firma em { color: var(--senal-claro); }
+@media (max-width: 760px) { .channels { grid-template-columns: 1fr; } }
 
 /* ---------- Footer ---------- */
-footer { background: var(--crema); }
+footer { background: var(--papel); border-top: 1px solid var(--niebla); }
 footer .top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding-block: 72px 56px; }
-footer .brand span { font-size: 30px; }
-.totop { background: var(--carbon); color: var(--blanco); text-decoration: none; border-radius: 999px; padding: 13px 26px; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; display: inline-flex; gap: 12px; align-items: center; }
+footer .brand svg { width: 38px; height: 39px; }
+footer .brand span { font-size: 32px; }
+.totop { background: var(--tinta); color: var(--papel); text-decoration: none; border-radius: 999px; padding: 14px 26px; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; display: inline-flex; gap: 12px; align-items: center; }
 .totop svg { width: 12px; height: 12px; }
 .foot-nav { display: grid; grid-template-columns: repeat(3, minmax(0, max-content)); gap: 12px 72px; padding-bottom: 64px; }
 .foot-nav a { font-family: var(--display); font-size: 24px; text-decoration: none; }
-.foot-nav a:hover { color: #6A5DAA; }
-.legal { border-top: 1px solid var(--linea); padding-block: 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
+.foot-nav a:hover { color: var(--senal-texto); }
+.legal { border-top: 1px solid var(--niebla); padding-block: 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
 @media (max-width: 640px) { .foot-nav { grid-template-columns: 1fr 1fr; gap: 10px 32px; } .foot-nav a { font-size: 21px; } }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo-d" viewBox="0 0 1200 1232">
-    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
-    <rect x="845" y="1123" width="349.3" height="106.2" fill="#A196D1"/>
-  </symbol>
-  <symbol id="d-only" viewBox="0 0 842 1225">
-    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
+  <!-- Isotipo: la D con capas. Capa trasera var(--d2), capa media var(--d1), D en currentColor. -->
+  <symbol id="logo-d" viewBox="90 68 245 252">
+    <path style="fill:var(--d2,#E7C0AF)" fill-rule="evenodd" transform="translate(24,-6)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path style="fill:var(--d1,#C2410C)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path fill="currentColor" fill-rule="evenodd" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
   </symbol>
   <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <symbol id="cal" viewBox="0 0 18 18"><rect x="1.5" y="3" width="15" height="13" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 7h15M5.5 1v4M12.5 1v4" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <!-- Iconos del sistema de marca -->
+  <symbol id="i-datos-personales" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="24" y="38" width="24" height="28" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="16" y="26" width="68" height="48" rx="8"/><circle cx="36" cy="45" r="7"/><path d="M26 64 Q36 52 46 64"/><path d="M57 42 H74 M57 52 H74 M57 62 H67"/></g></symbol>
+  <symbol id="i-politica-por-capas" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="34" y="18" width="40" height="50" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M34 26 V24 a6 6 0 0 1 6 -6 H68 a6 6 0 0 1 6 6 V62 a6 6 0 0 1 -6 6 H66"/><rect x="26" y="26" width="40" height="54" rx="6"/><path d="M34 40 H58 M34 50 H58 M34 60 H50"/></g></symbol>
+  <symbol id="i-base-legal" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="62" width="40" height="18" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M56 30 C54 26 44 26 44 31 C44 36 56 36 56 41 C56 45 52 47 48 47"/><path d="M44 54 C46 58 56 58 56 53 C56 48 44 48 44 43 C44 39 48 37 52 37"/><path d="M36 72 H64"/></g></symbol>
+  <symbol id="i-evidencia" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="51" cy="54" r="15"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M16 76 V28 a6 6 0 0 1 6 -6 H38 L46 30 H78 a6 6 0 0 1 6 6 V76 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 Z"/><path d="M40 54 L48 62 L64 44"/></g></symbol>
+  <symbol id="i-evaluacion-de-impacto" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M50 68 L18 68 A32 32 0 0 1 27.4 45.4 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 68 A32 32 0 0 1 82 68"/><path d="M50 68 L68 42"/><circle cx="50" cy="68" r="4"/><path d="M50 36 V42 M73 45 L69 49"/></g></symbol>
+  <symbol id="i-riesgo" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M32 60 H68 L78 78 H22 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M50 16 L86 80 H14 Z"/><path d="M50 38 V56 M50 68 V68.5"/></g></symbol>
+  <symbol id="i-contrato-con-encargado" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="54" y="30" width="32" height="44" rx="5"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="14" y="26" width="32" height="44" rx="5"/><rect x="54" y="30" width="32" height="44" rx="5"/><path d="M21 38 H39 M21 47 H39 M61 42 H79 M61 51 H79"/><path d="M38 62 Q50 80 62 66"/></g></symbol>
+  <symbol id="i-inteligencia-artificial" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="30" width="40" height="40" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="30" y="30" width="40" height="40" rx="6"/><rect x="41" y="41" width="18" height="18" rx="3"/><path d="M40 30 V20 M50 30 V20 M60 30 V20 M40 70 V80 M50 70 V80 M60 70 V80 M30 40 H20 M30 50 H20 M30 60 H20 M70 40 H80 M70 50 H80 M70 60 H80"/></g></symbol>
+  <symbol id="i-ciberseguridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="34" cy="50" r="14"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="34" cy="50" r="14"/><circle cx="34" cy="50" r="4"/><path d="M48 50 H84 M72 50 V62 M82 50 V58"/></g></symbol>
+  <symbol id="i-conectividad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M45 58 L40 80 H60 L55 58 Z"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="50" cy="34" r="5"/><path d="M50 40 L38 84 M50 40 L62 84 M42 70 H58"/><path d="M38 22 C32 28 32 40 38 46 M30 15 C20 25 20 43 30 53 M62 22 C68 28 68 40 62 46 M70 15 C80 25 80 43 70 53"/></g></symbol>
+  <symbol id="i-resolucion-de-autoridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="62" cy="68" r="11"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M34 34 H56 M34 44 H66 M34 54 H58"/><circle cx="62" cy="68" r="11"/><path d="M57 68 L61 72 L68 64"/></g></symbol>
+  <symbol id="i-analisis" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="42" cy="42" r="18"/></g><g style="fill:none;stroke:var(--ic-line,#102A43);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="42" cy="42" r="22"/><path d="M58 58 L82 82 M32 38 a11 11 0 0 1 11 -9"/></g></symbol>
 </svg>
 
 <header class="site" id="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Denisse Armijos, inicio">
-      <svg><use href="#logo-d"/></svg>
+      <svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg>
       <span>Denisse Armijos</span>
     </a>
     <nav class="main" aria-label="Principal">
@@ -284,7 +316,7 @@ footer .brand span { font-size: 30px; }
     <div class="tools">
       <span class="lang" title="Versión en inglés próximamente">ESP</span>
       <button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
-        <svg viewBox="0 0 30 22"><path d="M0 1h30M0 11h30M0 21h30" stroke="currentColor" stroke-width="2"/></svg>
+        <svg viewBox="0 0 30 22" aria-hidden="true"><path d="M0 1h30M0 11h30M0 21h30" stroke="currentColor" stroke-width="2"/></svg>
       </button>
     </div>
   </div>
@@ -304,10 +336,11 @@ footer .brand span { font-size: 30px; }
   <section class="hero" aria-label="Presentación">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="wrap">
+      <p class="kicker firma">Privacidad con rigor. Tecnología sin miedo.</p>
       <h1>No basta con cumplir; <em>hay que poder demostrarlo.</em></h1>
       <p class="sub">Protección de datos, tecnología y gestión del riesgo, con rigor jurídico y enfoque práctico.</p>
       <div class="signature" aria-hidden="true">
-        <svg class="d"><use href="#d-only"/></svg>
+        <svg class="d mark on-dark"><use href="#logo-d"/></svg>
         <div class="rule"></div>
       </div>
     </div>
@@ -316,19 +349,21 @@ footer .brand span { font-size: 30px; }
   <section class="sec" id="perfil">
     <div class="wrap perfil">
       <div>
-        <p class="kicker" style="color:#6A5DAA;margin:0 0 18px">Abogada · Protección de Datos Personales, Privacidad y Tecnología</p>
-        <h2 class="sec-head" style="display:block;margin:0 0 28px"><span style="font-family:var(--display);font-weight:500;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-.01em">Denisse Armijos</span></h2>
+        <p class="kicker" style="color:var(--senal-texto);margin:0 0 18px">Abogada · Protección de Datos Personales, Privacidad y Tecnología</p>
+        <h2 class="name">Denisse Armijos</h2>
         <p class="quote">Conecto el derecho con la tecnología: la protección de datos como parte de la <em>gestión del riesgo, la gobernanza y la confianza digital.</em></p>
         <p>Soy abogada ecuatoriana especializada en protección de datos personales, privacidad y derecho de las tecnologías. Tengo experiencia en asesoría jurídica y consultoría, en proyectos de adecuación normativa y cumplimiento regulatorio para organizaciones del sector público y privado.</p>
         <p class="muted">He participado en diagnósticos de cumplimiento, identificación de actividades de tratamiento, análisis y evaluación de riesgos, evaluaciones de impacto, elaboración de instrumentos jurídicos y políticas institucionales, y diseño de procedimientos para la gestión de datos personales. También he trabajado en la delimitación de responsabilidades entre los actores del tratamiento, la privacidad desde el diseño y por defecto, y la construcción de mecanismos de gobernanza y responsabilidad proactiva.</p>
+        <p class="muted">Analizo lo que deciden las autoridades de protección de datos de Europa y América Latina y lo traduzco a lo que significa para Ecuador.</p>
+        <p class="creo">Creo que la tecnología se puede explicar sin jerga, y que hay que hacerlo sin miedo.</p>
         <div class="degree">
-          <span class="kicker" style="color:#6A5DAA">Formación</span>
+          <span class="kicker" style="color:var(--senal-texto)">Formación</span>
           <h3>Máster en Derecho de las Telecomunicaciones, Protección de Datos, Sociedad de la Información y Audiovisual</h3>
           <p>Universidad Carlos III de Madrid, España</p>
         </div>
       </div>
       <figure class="portrait">
-        <svg><use href="#logo-d"/></svg>
+        <svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg>
         <figcaption>Fotografía próximamente</figcaption>
       </figure>
     </div>
@@ -338,17 +373,17 @@ footer .brand span { font-size: 30px; }
     <div class="wrap">
       <div class="sec-head">
         <h2>Áreas de especialización</h2>
-        <a class="more" href="#contacto">Consultas <svg><use href="#arrow"/></svg></a>
+        <a class="more" href="#contacto">Consultas <svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
       <div class="cards">
-        <article class="card"><span class="kicker">Privacidad</span><h3>Protección de datos personales</h3><p>Análisis y asesoría sobre el tratamiento de datos personales.</p></article>
-        <article class="card c2"><span class="kicker">Ecuador</span><h3>Cumplimiento de la LOPDP</h3><p>Ley Orgánica de Protección de Datos Personales y normativa conexa.</p></article>
-        <article class="card"><span class="kicker">Tecnología</span><h3>Derecho de las tecnologías y telecomunicaciones</h3><p>Regulación de servicios digitales y entornos tecnológicos.</p></article>
-        <article class="card c3"><span class="kicker">Riesgo</span><h3>Gestión de riesgos legales</h3><p>Riesgos asociados al tratamiento de datos y su mitigación.</p></article>
-        <article class="card c2"><span class="kicker">Gobernanza</span><h3>Responsabilidad proactiva</h3><p>Roles, políticas y evidencias que demuestran el cumplimiento.</p></article>
-        <article class="card"><span class="kicker">EIPD</span><h3>Evaluaciones de impacto</h3><p>Evaluación de tratamientos de alto riesgo para los derechos de las personas.</p></article>
-        <article class="card c2"><span class="kicker">Obligaciones</span><h3>Responsables y encargados</h3><p>Obligaciones, contratos y distribución de responsabilidades.</p></article>
-        <article class="card"><span class="kicker">Diseño</span><h3>Privacidad desde el diseño y por defecto</h3><p>Garantías incorporadas en productos, procesos y proyectos.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-datos-personales"/></svg><span class="kicker">Privacidad</span><h3>Protección de datos personales</h3><p>Análisis y asesoría sobre el tratamiento de datos personales.</p></article>
+        <article class="card dark"><svg class="ico" aria-hidden="true"><use href="#i-base-legal"/></svg><span class="kicker">Ecuador</span><h3>Cumplimiento de la LOPDP</h3><p>Ley Orgánica de Protección de Datos Personales y normativa conexa.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-conectividad"/></svg><span class="kicker">Tecnología</span><h3>Derecho de las tecnologías y telecomunicaciones</h3><p>Regulación de servicios digitales y entornos tecnológicos.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-riesgo"/></svg><span class="kicker">Riesgo</span><h3>Gestión de riesgos legales</h3><p>Riesgos asociados al tratamiento de datos y su mitigación.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-evidencia"/></svg><span class="kicker">Gobernanza</span><h3>Responsabilidad proactiva</h3><p>Roles, políticas y evidencias que demuestran el cumplimiento.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-evaluacion-de-impacto"/></svg><span class="kicker">EIPD</span><h3>Evaluaciones de impacto</h3><p>Evaluación de tratamientos de alto riesgo para los derechos de las personas.</p></article>
+        <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-contrato-con-encargado"/></svg><span class="kicker">Obligaciones</span><h3>Responsables y encargados</h3><p>Obligaciones, contratos y distribución de responsabilidades.</p></article>
+        <article class="card dark"><svg class="ico" aria-hidden="true"><use href="#i-politica-por-capas"/></svg><span class="kicker">Diseño</span><h3>Privacidad desde el diseño y por defecto</h3><p>Garantías incorporadas en productos, procesos y proyectos.</p></article>
       </div>
     </div>
   </section>
@@ -357,24 +392,24 @@ footer .brand span { font-size: 30px; }
     <div class="wrap">
       <div class="sec-head">
         <h2>Publicaciones</h2>
-        <a class="more" href="#publicaciones">Todas las publicaciones <svg><use href="#arrow"/></svg></a>
+        <a class="more" href="#publicaciones">Todas las publicaciones <svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
       <div class="feat">
         <a class="lead-story" href="publicaciones/politicas-de-privacidad.html">
           <div class="lead-art" aria-hidden="true">
-            <svg class="big-d"><use href="#d-only"/></svg>
+            <svg class="big-d"><use href="#logo-d"/></svg>
             <div class="art-rule"></div>
             <span>Publicar no es lo mismo que informar</span>
           </div>
           <span class="kicker">Transparencia · Análisis y opinión</span>
           <h3>Tu página web tiene una política de privacidad. ¿Pero realmente informa?</h3>
           <p>La diferencia entre publicar un documento y garantizar transparencia en el tratamiento de datos personales: la LOPDP, el enfoque por capas y el Legal Design.</p>
-          <span class="date"><svg><use href="#cal"/></svg>Oct. 21 2026</span>
+          <span class="date"><svg aria-hidden="true"><use href="#cal"/></svg>Oct. 21 2026</span>
         </a>
         <div class="side-list">
-          <article class="side-item"><span class="kicker">Análisis normativo</span><h3>Las resoluciones de la Superintendencia de Protección de Datos Personales</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
-          <article class="side-item"><span class="kicker">Guía práctica</span><h3>Cómo aplicar las obligaciones de protección de datos en tu organización</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
-          <article class="side-item"><span class="kicker">Derecho comparado</span><h3>La LOPDP frente al RGPD: convergencias y diferencias</h3><span class="date"><svg><use href="#cal"/></svg>Próximamente</span></article>
+          <article class="side-item"><svg class="ico" aria-hidden="true"><use href="#i-resolucion-de-autoridad"/></svg><span class="kicker">Análisis normativo</span><h3>Las resoluciones de la Superintendencia de Protección de Datos Personales</h3><span class="date"><svg aria-hidden="true"><use href="#cal"/></svg>Próximamente</span></article>
+          <article class="side-item"><svg class="ico" aria-hidden="true"><use href="#i-evidencia"/></svg><span class="kicker">Guía práctica</span><h3>Cómo aplicar las obligaciones de protección de datos en tu organización</h3><span class="date"><svg aria-hidden="true"><use href="#cal"/></svg>Próximamente</span></article>
+          <article class="side-item"><svg class="ico" aria-hidden="true"><use href="#i-base-legal"/></svg><span class="kicker">Derecho comparado</span><h3>La LOPDP frente al RGPD: convergencias y diferencias</h3><span class="date"><svg aria-hidden="true"><use href="#cal"/></svg>Próximamente</span></article>
         </div>
       </div>
     </div>
@@ -384,7 +419,7 @@ footer .brand span { font-size: 30px; }
     <div class="wrap">
       <div class="sec-head">
         <h2>Observatorio de autoridades</h2>
-        <a class="more" href="#observatorio">Todas las resoluciones <svg><use href="#arrow"/></svg></a>
+        <a class="more" href="#observatorio">Todas las resoluciones <svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
       <p class="obs-intro">Análisis de resoluciones de autoridades de protección de datos de Europa y América Latina, y lo que cada una enseña a las organizaciones en Ecuador.</p>
       <div class="chips" role="group" aria-label="Filtrar por autoridad">
@@ -430,20 +465,20 @@ footer .brand span { font-size: 30px; }
     <div class="wrap">
       <div class="sec-head">
         <h2>Investigación</h2>
-        <a class="more" href="#contacto">Colaboraciones académicas <svg><use href="#arrow"/></svg></a>
+        <a class="more" href="#contacto">Colaboraciones académicas <svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
       <div class="band-grid">
         <article class="tfm">
           <span class="kicker">Trabajo de Fin de Máster · Universidad Carlos III de Madrid</span>
           <h3>Desafíos jurídicos de la inteligencia artificial y la protección de datos: el caso Read.ai</h3>
           <p>Análisis de los retos que plantean los asistentes de IA que graban, transcriben y resumen reuniones, a la luz de la normativa de protección de datos.</p>
-          <span class="date"><svg><use href="#cal"/></svg>Versión pública próximamente</span>
+          <span class="date"><svg aria-hidden="true"><use href="#cal"/></svg>Versión pública próximamente</span>
         </article>
         <div class="interest">
-          <div><span class="kicker">Inteligencia artificial</span><span class="t">Gobernanza algorítmica</span></div>
-          <div><span class="kicker">Seguridad de la información</span><span class="t">Ciberseguridad y seguridad informática</span></div>
-          <div><span class="kicker">Riesgo</span><span class="t">Gestión de riesgos tecnológicos</span></div>
-          <div><span class="kicker">Datos</span><span class="t">Análisis de datos</span></div>
+          <div><svg class="ico" aria-hidden="true"><use href="#i-inteligencia-artificial"/></svg><span class="kicker">Inteligencia artificial</span><span class="t">Gobernanza algorítmica</span></div>
+          <div><svg class="ico" aria-hidden="true"><use href="#i-ciberseguridad"/></svg><span class="kicker">Seguridad de la información</span><span class="t">Ciberseguridad y seguridad informática</span></div>
+          <div><svg class="ico" aria-hidden="true"><use href="#i-riesgo"/></svg><span class="kicker">Riesgo</span><span class="t">Gestión de riesgos tecnológicos</span></div>
+          <div><svg class="ico" aria-hidden="true"><use href="#i-analisis"/></svg><span class="kicker">Datos</span><span class="t">Análisis de datos</span></div>
         </div>
       </div>
     </div>
@@ -471,9 +506,11 @@ footer .brand span { font-size: 30px; }
       </div>
       <p class="lead">Abierta a colaboraciones profesionales y académicas, proyectos de consultoría y oportunidades en derecho digital, privacidad y ciberseguridad.</p>
       <div class="channels">
+        <a class="channel" href="https://www.instagram.com/denissearmijospdp/" rel="noopener" target="_blank"><span class="kicker">Instagram</span><span>@denissearmijospdp</span></a>
         <div class="channel"><span class="kicker">LinkedIn</span><span>Próximamente</span></div>
         <div class="channel"><span class="kicker">Correo profesional</span><span>Próximamente</span></div>
       </div>
+      <p class="firma">Privacidad con rigor. <em>Tecnología sin miedo.</em></p>
     </div>
   </section>
 </main>
@@ -481,14 +518,13 @@ footer .brand span { font-size: 30px; }
 <footer>
   <div class="wrap">
     <div class="top">
-      <a class="brand" href="#inicio"><svg><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
-      <a class="totop" href="#top">Volver arriba <svg viewBox="0 0 12 12"><path d="M1 8l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="brand" href="#inicio" aria-label="Denisse Armijos, inicio"><svg class="mark" aria-hidden="true"><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
+      <a class="totop" href="#top">Volver arriba <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 8l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
     <nav class="foot-nav" aria-label="Pie de página">
       <a href="#perfil">Perfil</a>
       <a href="#especializacion">Especialización</a>
       <a href="#publicaciones">Publicaciones</a>
-      <a href="#observatorio">Observatorio</a>
       <a href="#observatorio">Observatorio</a>
       <a href="#investigacion">Investigación</a>
       <a href="#contacto">Contacto</a>
@@ -509,8 +545,9 @@ footer .brand span { font-size: 30px; }
   btn.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
-  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Abrir menú'); } });
 
   // Filtro del Observatorio por autoridad
   var chips = document.querySelectorAll('.chip'), items = document.querySelectorAll('[data-a]'), empty = document.getElementById('obs-empty');
@@ -526,7 +563,8 @@ footer .brand span { font-size: 30px; }
     });
   });
 
-  // Campo de puntos: una retícula de datos que se desvanece hacia la izquierda, detrás del titular.
+  // Campo de puntos: una retícula de datos que se aclara hacia la derecha, detrás del titular.
+  // Algunos puntos toman el naranja de la marca.
   var c = document.getElementById('field'), ctx = c.getContext('2d');
   function draw() {
     var r = window.devicePixelRatio || 1, w = c.clientWidth, h = c.clientHeight;
@@ -538,8 +576,10 @@ footer .brand span { font-size: 30px; }
         var wave = Math.sin(x * 0.012 + y * 0.018) * 0.5 + 0.5;
         var a = Math.max(0, (t - 0.35)) * 1.3 * (0.35 + wave * 0.65);
         if (a <= 0.02) continue;
-        ctx.fillStyle = 'rgba(255,255,255,' + Math.min(a, 0.9).toFixed(3) + ')';
-        var s = 1 + wave * 1.4;
+        var warm = ((x / step) * 7 + (y / step) * 13) % 23 === 0;
+        ctx.fillStyle = warm ? 'rgba(232,105,47,' + Math.min(a * 1.4, 0.95).toFixed(3) + ')'
+                             : 'rgba(247,247,245,' + Math.min(a, 0.85).toFixed(3) + ')';
+        var s = warm ? 2.6 : 1 + wave * 1.4;
         ctx.fillRect(x, y, s, s);
       }
     }
