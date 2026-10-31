@@ -12,22 +12,26 @@
 <meta property="article:published_time" content="2026-10-21">
 <link rel="stylesheet" href="../fonts.css">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#102A43">
+<meta property="og:image" content="https://darmijosflores.github.io/og-image.png">
 <style>
-/* Layout: página de artículo — cabecera del sitio, portada en carbón con la línea lavanda,
+/* Layout: página de artículo — cabecera del sitio, portada en azul tinta con la línea naranja,
    cuerpo de lectura a ~68 caracteres con índice lateral fijo en escritorio. */
 :root {
-  --carbon: #111214;
-  --lavanda: #A196D1;
-  --lavanda-claro: #D4CAF0;
-  --crema: #F5F0ED;
-  --blanco: #FFFFFF;
-  --gris: #C4BFC7;
-  --tinta: #2A2830;
-  --linea: #E4DEE6;
-  --acento: #6A5DAA;
+  /* Marca Denisse Armijos: azul tinta, papel y un solo acento naranja ladrillo. */
+  --carbon: #102A43;        /* azul tinta: textos y bloques */
+  --lavanda: #C2410C;       /* naranja ladrillo: acento */
+  --lavanda-claro: #FFFFFF;
+  --crema: #FFFFFF;
+  --blanco: #F7F7F5;        /* papel: fondo */
+  --gris: #BCCCDC;          /* texto secundario sobre azul */
+  --tinta: #334E68;         /* texto secundario sobre claro */
+  --linea: #D9DEE3;         /* niebla: líneas y bordes */
+  --acento: #B23A0A;        /* naranja para textos pequeños */
 
-  --display: "Bauer Bodoni", "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
-  --body: "Arimo", "Helvetica Neue", Arial, sans-serif;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", Arial, "Helvetica Neue", sans-serif;
   --max: 1180px;
   color-scheme: light;
 }
@@ -47,8 +51,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--lavanda); outli
 header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--blanco); border-bottom: 1px solid var(--linea); }
 header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block: 22px; }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
-.brand svg { width: 26px; height: 27px; color: var(--carbon); }
-.brand span { font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1; }
+.brand svg { width: 30px; height: 31px; color: var(--carbon); --d1: #C2410C; --d2: #E7C0AF; }
+.brand span { font-family: var(--display); font-weight: 400; font-size: 27px; line-height: 1; }
 nav.main { display: flex; gap: 28px; margin-left: auto; }
 nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
 nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda); }
@@ -56,14 +60,14 @@ nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda)
 @media (max-width: 1100px) { nav.main { display: none; } .back { display: inline-flex; } .brand span { font-size: 22px; } }
 
 /* Portada del artículo */
-.art-hero { background: var(--carbon); color: var(--crema); position: relative; overflow: hidden; }
+.art-hero { background: var(--carbon); color: #F7F7F5; position: relative; overflow: hidden; }
 .art-hero .wrap { padding-block: 80px 96px; position: relative; }
-.art-hero .kicker { color: var(--lavanda); display: flex; gap: 14px; flex-wrap: wrap; }
-.art-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(38px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -.01em; margin: 24px 0 24px; max-width: 18ch; text-wrap: balance; }
-.art-hero h1 em { color: var(--lavanda-claro); }
+.art-hero .kicker { color: #F4A27A; display: flex; gap: 14px; flex-wrap: wrap; }
+.art-hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(38px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -.01em; margin: 24px 0 24px; max-width: 18ch; text-wrap: balance; }
+.art-hero h1 em { color: #E8692F; }
 .art-hero .dek { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; color: var(--gris); max-width: 52ch; margin: 0 0 40px; }
 .byline { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; color: var(--gris); }
-.byline strong { color: var(--crema); font-weight: 600; }
+.byline strong { color: #F7F7F5; font-weight: 600; }
 .art-hero .rule { position: absolute; left: 0; right: 0; bottom: 36px; height: 6px; background: var(--lavanda); }
 @media (max-width: 640px) { .art-hero .wrap { padding-block: 56px 80px; } .art-hero .rule { bottom: 28px; height: 4px; } }
 
@@ -85,7 +89,7 @@ nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda)
 .prose ul { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 0; border-top: 1px solid var(--linea); }
 .prose ul li { padding: 14px 0 14px 28px; border-bottom: 1px solid var(--linea); position: relative; }
 .prose ul li::before { content: ""; position: absolute; left: 4px; top: 25px; width: 7px; height: 7px; background: var(--lavanda); transform: rotate(45deg); }
-.prose .note { background: var(--crema); padding: 22px 26px; margin: 0 0 28px; font-size: 16px; }
+.prose .note { background: var(--crema); border: 1px solid var(--linea); padding: 22px 26px; margin: 0 0 28px; font-size: 16px; }
 .prose .note strong { display: block; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--acento); margin-bottom: 6px; }
 blockquote.pull { margin: 48px 0; padding: 28px 0; border-top: 2px solid var(--carbon); border-bottom: 1px solid var(--linea); font-family: var(--display); font-size: clamp(26px, 3vw, 34px); line-height: 1.25; text-wrap: balance; }
 blockquote.pull em { color: var(--acento); }
@@ -94,8 +98,8 @@ blockquote.pull em { color: var(--acento); }
 figure.layers { margin: 36px 0 40px; }
 .layers-grid { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1.25fr); align-items: stretch; }
 .layer { padding: 24px 24px 22px; display: grid; gap: 10px; align-content: start; }
-.layer.l1 { background: var(--lavanda-claro); }
-.layer.l2 { background: var(--crema); }
+.layer.l1 { background: var(--crema); border: 1px solid var(--linea); }
+.layer.l2 { background: var(--linea); }
 .layer h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; margin: 0; }
 .layer .kicker { color: var(--acento); }
 .layer ul.mini { list-style: none; margin: 4px 0 0; padding: 0; border: 0; display: grid; gap: 6px; font-size: 15px; line-height: 1.45; }
@@ -112,24 +116,27 @@ figure.layers figcaption { font-size: 14px; color: var(--tinta); margin-top: 12p
 .refs ol { margin: 0; padding-left: 22px; display: grid; gap: 12px; font-size: 15px; line-height: 1.55; }
 .refs a { color: var(--acento); overflow-wrap: anywhere; }
 .disclaimer { margin-top: 32px; font-size: 14px; font-style: italic; color: var(--tinta); }
-.author { margin-top: 56px; background: var(--crema); padding: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; }
-.author svg { width: 48px; height: 50px; color: var(--carbon); }
+.author { margin-top: 56px; background: var(--crema); border: 1px solid var(--linea); padding: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; }
+.author svg { width: 48px; height: 50px; color: var(--carbon); --d1: #C2410C; --d2: #E7C0AF; }
 .author p { margin: 0; font-size: 15px; color: var(--tinta); }
 .author strong { font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--carbon); display: block; }
-.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; margin-top: 40px; }
+.more { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; font-size: 13px; font-weight: 600; color: var(--acento); letter-spacing: .18em; text-transform: uppercase; margin-top: 40px; }
 .more svg { width: 28px; height: 14px; }
 
-footer { background: var(--crema); }
+footer { background: var(--blanco); border-top: 1px solid var(--linea); }
 footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-block: 40px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
 footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--carbon); }
+footer .firma { font-family: var(--display); font-style: italic; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--carbon); }
+footer .firma em { color: var(--acento); }
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo-d" viewBox="0 0 1200 1232">
-    <path fill="currentColor" d="M 2.67 2.63 L 356.11 2.63 C 633.32 2.63 838.91 263.66 838.91 612.48 C 838.91 961.3 633.32 1222.34 356.11 1222.34 L 2.67 1222.34 Z"/>
-    <rect x="845" y="1123" width="349.3" height="106.2" fill="#A196D1"/>
+  <symbol id="logo-d" viewBox="90 68 245 252">
+    <path style="fill:var(--d2,#E7C0AF)" fill-rule="evenodd" transform="translate(24,-6)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path style="fill:var(--d1,#C2410C)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path fill="currentColor" fill-rule="evenodd" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
   </symbol>
   <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 </svg>
@@ -137,7 +144,7 @@ footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; c
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Denisse Armijos, inicio">
-      <svg><use href="#logo-d"/></svg>
+      <svg aria-hidden="true"><use href="#logo-d"/></svg>
       <span>Denisse Armijos</span>
     </a>
     <nav class="main" aria-label="Principal">
@@ -309,7 +316,8 @@ footer .brand span { font-size: 24px; letter-spacing: 0; text-transform: none; c
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="../"><svg><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
+    <a class="brand" href="../" aria-label="Denisse Armijos, inicio"><svg aria-hidden="true"><use href="#logo-d"/></svg><span>Denisse Armijos</span></a>
+    <span class="firma">Privacidad con rigor. <em>Tecnología sin miedo.</em></span>
     <span>Este sitio no usa cookies ni herramientas de rastreo</span>
   </div>
 </footer>
