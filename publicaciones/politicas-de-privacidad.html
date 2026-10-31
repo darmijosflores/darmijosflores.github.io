@@ -53,11 +53,11 @@ header.site .wrap { display: flex; align-items: center; gap: 40px; padding-block
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; flex: none; }
 .brand svg { width: 30px; height: 31px; color: var(--carbon); --d1: #C2410C; --d2: #E7C0AF; }
 .brand span { font-family: var(--display); font-weight: 400; font-size: 27px; line-height: 1; }
-nav.main { display: flex; gap: 28px; margin-left: auto; }
-nav.main a { font-family: var(--display); font-size: 18px; text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
+nav.main { display: flex; gap: 24px; margin-left: auto; }
+nav.main a { white-space: nowrap; font-family: var(--display); font-size: 18px; text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
 nav.main a:hover, nav.main a[aria-current] { border-bottom-color: var(--lavanda); }
 .back { display: none; margin-left: auto; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-@media (max-width: 1100px) { nav.main { display: none; } .back { display: inline-flex; } .brand span { font-size: 22px; } }
+@media (max-width: 1240px) { nav.main { display: none; } .back { display: inline-flex; } .brand span { font-size: 22px; } }
 
 /* Portada del artículo */
 .art-hero { background: var(--carbon); color: #F7F7F5; position: relative; overflow: hidden; }
@@ -148,7 +148,8 @@ footer .firma em { color: var(--acento); }
       <span>Denisse Armijos</span>
     </a>
     <nav class="main" aria-label="Principal">
-      <a href="../perfil.html">Perfil</a>
+      <a href="../">Inicio</a>
+      <a href="../perfil.html">Sobre mí</a>
       <a href="../#especializacion">Especialización</a>
       <a href="../#publicaciones" aria-current="page">Publicaciones</a>
       <a href="../#observatorio">Observatorio</a>
