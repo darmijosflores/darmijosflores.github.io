@@ -95,6 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 /* Trabajemos juntos */
 .cta { background: var(--blanco); border-top: 1px solid var(--niebla); border-bottom: 1px solid var(--niebla); }
 .cta .wrap { padding-block: 88px; }
+.cta h2 .punto { color: var(--senal); }
 .cta h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0 0 40px; max-width: 18ch; }
 .offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-bottom: 48px; }
 .offer { border-top: 2px solid var(--tinta); padding-top: 18px; display: grid; gap: 8px; align-content: start; }
@@ -233,7 +234,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 
   <section class="cta" aria-labelledby="juntos">
     <div class="wrap">
-      <h2 id="juntos">Trabajemos juntos.</h2>
+      <h2 id="juntos">Trabajemos juntos<span class="punto">.</span></h2>
       <div class="offers">
         <div class="offer"><span class="kicker">Organizaciones</span><h3>Cumplir la LOPDP y poder demostrarlo</h3><p>Diagnóstico, adecuación, evaluaciones de impacto y acompañamiento para entidades públicas y empresas privadas.</p></div>
         <div class="offer"><span class="kicker">Firmas y equipos</span><h3>Talento especializado en derecho digital</h3><p>Protección de datos, privacidad y tecnología con formación ecuatoriana y europea.</p></div>
@@ -269,13 +270,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
     </div>
   </section>
 </main>
-
-<section class="talk" aria-labelledby="conversemos">
-  <div class="wrap">
-    <h2 id="conversemos" data-reveal>Conversemos<span class="punto">.</span></h2>
-    <a class="btn ghost" href="contacto.html" data-reveal style="--d:.1s"><svg aria-hidden="true"><use href="#mail"/></svg>Escríbeme <svg class="arr" aria-hidden="true"><use href="#arrow"/></svg></a>
-  </div>
-</section>
 
 <footer class="site">
   <div class="wrap">
