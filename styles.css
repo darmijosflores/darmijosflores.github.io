@@ -1,13 +1,13 @@
 /* Estilos compartidos — marca Denisse Armijos
-   Fondo papel, negro para textos y bloques, un solo acento naranja ladrillo.
+   Fondo papel, negro para textos y bloques, un solo acento celeste.
    Títulos en Newsreader, textos e interfaz en IBM Plex Sans. */
 :root {
   --tinta: #111214;        /* negro: textos, logotipo, bloques */
   --papel: #F7F7F5;        /* fondos */
-  --senal: #C2410C;        /* naranja ladrillo: acento */
-  --senal-texto: #B23A0A;  /* naranja para textos pequeños sobre claro */
-  --senal-claro: #E8692F;  /* naranja sobre fondo negro */
-  --senal-suave: #F4A27A;  /* etiquetas pequeñas sobre fondo negro */
+  --senal: #4FA3D9;        /* celeste: acento */
+  --senal-texto: #1D6A99;  /* celeste para textos pequeños sobre claro */
+  --senal-claro: #7CC4EE;  /* celeste sobre fondo negro */
+  --senal-suave: #A9D8F2;  /* etiquetas pequeñas sobre fondo negro */
   --niebla: #DEDEDE;       /* líneas y bordes */
   --blanco: #FFFFFF;
   --texto-2: #4A4A50;      /* texto secundario sobre claro */
@@ -38,8 +38,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .date svg { width: 18px; height: 18px; flex: none; }
 
 /* Isotipo e iconos: sus colores se controlan con variables */
-.mark { --d1: var(--senal); --d2: #E7C0AF; color: var(--tinta); }
-.mark.on-dark { --d1: var(--senal); --d2: #69362A; color: var(--papel); }
+.mark { --d1: var(--senal); --d2: #CBE6F5; color: var(--tinta); }
+.mark.on-dark { --d1: var(--senal); --d2: #1E4A63; color: var(--papel); }
 .ico { width: 56px; height: 56px; flex: none; --ic-line: var(--tinta); --ic-fill: var(--senal); }
 
 /* Enlace con flecha */
@@ -49,8 +49,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .on-blue .more, .more.light { color: var(--senal-suave); }
 
 /* Botones */
-.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; text-decoration: none; background: var(--senal); color: var(--blanco); border: 1px solid var(--senal); padding: 14px 22px; cursor: pointer; }
-.btn:hover { background: var(--senal-texto); border-color: var(--senal-texto); }
+.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; text-decoration: none; background: var(--senal); color: var(--tinta); border: 1px solid var(--senal); padding: 14px 22px; cursor: pointer; }
+.btn:hover { background: var(--senal-texto); border-color: var(--senal-texto); color: var(--blanco); }
 .btn.line { background: transparent; color: var(--tinta); border-color: var(--tinta); }
 .btn.line:hover { background: var(--tinta); color: var(--papel); }
 .btn.ghost { background: transparent; color: var(--papel); border-color: rgba(247,247,245,.75); }

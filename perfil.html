@@ -15,7 +15,7 @@
 <meta property="og:locale" content="es_EC">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="styles.css?v=20261123a">
+<link rel="stylesheet" href="styles.css?v=20261123b">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');</script>
@@ -26,10 +26,10 @@
 :root {
   --tinta: #111214;
   --papel: #F7F7F5;
-  --senal: #C2410C;
-  --senal-texto: #B23A0A;
-  --senal-claro: #E8692F;
-  --senal-suave: #F4A27A;
+  --senal: #4FA3D9;
+  --senal-texto: #1D6A99;
+  --senal-claro: #7CC4EE;
+  --senal-suave: #A9D8F2;
   --niebla: #DEDEDE;
   --blanco: #FFFFFF;
   --texto-2: #4A4A50;
@@ -50,8 +50,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 @media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
 .kicker { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
-.mark { --d1: var(--senal); --d2: #E7C0AF; color: var(--tinta); }
-.mark.on-dark { --d1: var(--senal); --d2: #69362A; color: var(--papel); }
+.mark { --d1: var(--senal); --d2: #CBE6F5; color: var(--tinta); }
+.mark.on-dark { --d1: var(--senal); --d2: #1E4A63; color: var(--papel); }
 
 
 /* Portada de la biografía */
@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .masthead h1 { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 112px); line-height: .95; letter-spacing: -.02em; margin: 0; }
 .masthead .tag { font-family: var(--display); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); margin: 20px 0 0; color: var(--texto-azul-2); }
 .masthead .tag em { color: var(--senal-claro); }
-/* Línea naranja que se dibuja de izquierda a derecha al cargar, como en la portada del inicio */
+/* Línea celeste que se dibuja de izquierda a derecha al cargar, como en la portada del inicio */
 .masthead .line { margin-top: 48px; height: 5px; background: var(--senal); margin-right: calc(-1 * max(24px, env(safe-area-inset-right, 0px)) - 50vw); transform-origin: left; }
 .anim .masthead .line { transform: scaleX(0); animation: traza 1.2s .35s cubic-bezier(.6,0,.2,1) forwards; }
 @keyframes traza { to { transform: scaleX(1); } }
@@ -103,8 +103,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .offer h3 { font-family: var(--display); font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0; }
 .offer p { margin: 0; font-size: 15px; color: var(--texto-2); }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
-.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; background: var(--senal); color: var(--blanco); border: 0; padding: 16px 22px; cursor: pointer; }
-.btn:hover { background: var(--senal-texto); }
+.btn { font-family: var(--body); display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; background: var(--senal); color: var(--tinta); border: 0; padding: 16px 22px; cursor: pointer; }
+.btn:hover { background: var(--senal-texto); color: var(--blanco); }
 .btn.line { background: transparent; color: var(--tinta); border: 1px solid var(--tinta); }
 .btn.line:hover { background: var(--tinta); color: var(--papel); }
 .btn svg { width: 14px; height: 14px; }
@@ -132,8 +132,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo-d" viewBox="90 68 245 252">
-    <path style="fill:var(--d2,#E7C0AF)" fill-rule="evenodd" transform="translate(24,-6)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
-    <path style="fill:var(--d1,#C2410C)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path style="fill:var(--d2,#CBE6F5)" fill-rule="evenodd" transform="translate(24,-6)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path style="fill:var(--d1,#4FA3D9)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
     <path fill="currentColor" fill-rule="evenodd" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
   </symbol>
   <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
@@ -144,18 +144,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
   <symbol id="instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
   <symbol id="down" viewBox="0 0 14 14"><path d="M7 1v9M3 6l4 4 4-4M1 13h12" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 8V3H3v13h5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
-  <symbol id="i-datos-personales" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="24" y="38" width="24" height="28" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="16" y="26" width="68" height="48" rx="8"/><circle cx="36" cy="45" r="7"/><path d="M26 64 Q36 52 46 64"/><path d="M57 42 H74 M57 52 H74 M57 62 H67"/></g></symbol>
-  <symbol id="i-politica-por-capas" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="34" y="18" width="40" height="50" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M34 26 V24 a6 6 0 0 1 6 -6 H68 a6 6 0 0 1 6 6 V62 a6 6 0 0 1 -6 6 H66"/><rect x="26" y="26" width="40" height="54" rx="6"/><path d="M34 40 H58 M34 50 H58 M34 60 H50"/></g></symbol>
-  <symbol id="i-base-legal" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="62" width="40" height="18" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M56 30 C54 26 44 26 44 31 C44 36 56 36 56 41 C56 45 52 47 48 47"/><path d="M44 54 C46 58 56 58 56 53 C56 48 44 48 44 43 C44 39 48 37 52 37"/><path d="M36 72 H64"/></g></symbol>
-  <symbol id="i-evidencia" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="51" cy="54" r="15"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M16 76 V28 a6 6 0 0 1 6 -6 H38 L46 30 H78 a6 6 0 0 1 6 6 V76 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 Z"/><path d="M40 54 L48 62 L64 44"/></g></symbol>
-  <symbol id="i-evaluacion-de-impacto" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M50 68 L18 68 A32 32 0 0 1 27.4 45.4 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 68 A32 32 0 0 1 82 68"/><path d="M50 68 L68 42"/><circle cx="50" cy="68" r="4"/><path d="M50 36 V42 M73 45 L69 49"/></g></symbol>
-  <symbol id="i-riesgo" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M32 60 H68 L78 78 H22 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M50 16 L86 80 H14 Z"/><path d="M50 38 V56 M50 68 V68.5"/></g></symbol>
-  <symbol id="i-contrato-con-encargado" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="54" y="30" width="32" height="44" rx="5"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="14" y="26" width="32" height="44" rx="5"/><rect x="54" y="30" width="32" height="44" rx="5"/><path d="M21 38 H39 M21 47 H39 M61 42 H79 M61 51 H79"/><path d="M38 62 Q50 80 62 66"/></g></symbol>
-  <symbol id="i-inteligencia-artificial" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><rect x="30" y="30" width="40" height="40" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="30" y="30" width="40" height="40" rx="6"/><rect x="41" y="41" width="18" height="18" rx="3"/><path d="M40 30 V20 M50 30 V20 M60 30 V20 M40 70 V80 M50 70 V80 M60 70 V80 M30 40 H20 M30 50 H20 M30 60 H20 M70 40 H80 M70 50 H80 M70 60 H80"/></g></symbol>
-  <symbol id="i-ciberseguridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="34" cy="50" r="14"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="34" cy="50" r="14"/><circle cx="34" cy="50" r="4"/><path d="M48 50 H84 M72 50 V62 M82 50 V58"/></g></symbol>
-  <symbol id="i-conectividad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><path d="M45 58 L40 80 H60 L55 58 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="50" cy="34" r="5"/><path d="M50 40 L38 84 M50 40 L62 84 M42 70 H58"/><path d="M38 22 C32 28 32 40 38 46 M30 15 C20 25 20 43 30 53 M62 22 C68 28 68 40 62 46 M70 15 C80 25 80 43 70 53"/></g></symbol>
-  <symbol id="i-resolucion-de-autoridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="62" cy="68" r="11"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M34 34 H56 M34 44 H66 M34 54 H58"/><circle cx="62" cy="68" r="11"/><path d="M57 68 L61 72 L68 64"/></g></symbol>
-  <symbol id="i-analisis" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#C2410C)" transform="translate(3,-3)"><circle cx="42" cy="42" r="18"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="42" cy="42" r="22"/><path d="M58 58 L82 82 M32 38 a11 11 0 0 1 11 -9"/></g></symbol>
+  <symbol id="i-datos-personales" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><rect x="24" y="38" width="24" height="28" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="16" y="26" width="68" height="48" rx="8"/><circle cx="36" cy="45" r="7"/><path d="M26 64 Q36 52 46 64"/><path d="M57 42 H74 M57 52 H74 M57 62 H67"/></g></symbol>
+  <symbol id="i-politica-por-capas" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><rect x="34" y="18" width="40" height="50" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M34 26 V24 a6 6 0 0 1 6 -6 H68 a6 6 0 0 1 6 6 V62 a6 6 0 0 1 -6 6 H66"/><rect x="26" y="26" width="40" height="54" rx="6"/><path d="M34 40 H58 M34 50 H58 M34 60 H50"/></g></symbol>
+  <symbol id="i-base-legal" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><rect x="30" y="62" width="40" height="18" rx="4"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M56 30 C54 26 44 26 44 31 C44 36 56 36 56 41 C56 45 52 47 48 47"/><path d="M44 54 C46 58 56 58 56 53 C56 48 44 48 44 43 C44 39 48 37 52 37"/><path d="M36 72 H64"/></g></symbol>
+  <symbol id="i-evidencia" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><circle cx="51" cy="54" r="15"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M16 76 V28 a6 6 0 0 1 6 -6 H38 L46 30 H78 a6 6 0 0 1 6 6 V76 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 Z"/><path d="M40 54 L48 62 L64 44"/></g></symbol>
+  <symbol id="i-evaluacion-de-impacto" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><path d="M50 68 L18 68 A32 32 0 0 1 27.4 45.4 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 68 A32 32 0 0 1 82 68"/><path d="M50 68 L68 42"/><circle cx="50" cy="68" r="4"/><path d="M50 36 V42 M73 45 L69 49"/></g></symbol>
+  <symbol id="i-riesgo" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><path d="M32 60 H68 L78 78 H22 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M50 16 L86 80 H14 Z"/><path d="M50 38 V56 M50 68 V68.5"/></g></symbol>
+  <symbol id="i-contrato-con-encargado" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><rect x="54" y="30" width="32" height="44" rx="5"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="14" y="26" width="32" height="44" rx="5"/><rect x="54" y="30" width="32" height="44" rx="5"/><path d="M21 38 H39 M21 47 H39 M61 42 H79 M61 51 H79"/><path d="M38 62 Q50 80 62 66"/></g></symbol>
+  <symbol id="i-inteligencia-artificial" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><rect x="30" y="30" width="40" height="40" rx="6"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><rect x="30" y="30" width="40" height="40" rx="6"/><rect x="41" y="41" width="18" height="18" rx="3"/><path d="M40 30 V20 M50 30 V20 M60 30 V20 M40 70 V80 M50 70 V80 M60 70 V80 M30 40 H20 M30 50 H20 M30 60 H20 M70 40 H80 M70 50 H80 M70 60 H80"/></g></symbol>
+  <symbol id="i-ciberseguridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><circle cx="34" cy="50" r="14"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="34" cy="50" r="14"/><circle cx="34" cy="50" r="4"/><path d="M48 50 H84 M72 50 V62 M82 50 V58"/></g></symbol>
+  <symbol id="i-conectividad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><path d="M45 58 L40 80 H60 L55 58 Z"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="50" cy="34" r="5"/><path d="M50 40 L38 84 M50 40 L62 84 M42 70 H58"/><path d="M38 22 C32 28 32 40 38 46 M30 15 C20 25 20 43 30 53 M62 22 C68 28 68 40 62 46 M70 15 C80 25 80 43 70 53"/></g></symbol>
+  <symbol id="i-resolucion-de-autoridad" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><circle cx="62" cy="68" r="11"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><path d="M64 16 H32 a6 6 0 0 0 -6 6 V78 a6 6 0 0 0 6 6 H68 a6 6 0 0 0 6 -6 V26 Z M64 16 V26 H74"/><path d="M34 34 H56 M34 44 H66 M34 54 H58"/><circle cx="62" cy="68" r="11"/><path d="M57 68 L61 72 L68 64"/></g></symbol>
+  <symbol id="i-analisis" viewBox="0 0 100 100"><g style="fill:var(--ic-fill,#4FA3D9)" transform="translate(3,-3)"><circle cx="42" cy="42" r="18"/></g><g style="fill:none;stroke:var(--ic-line,#111214);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round"><circle cx="42" cy="42" r="22"/><path d="M58 58 L82 82 M32 38 a11 11 0 0 1 11 -9"/></g></symbol>
 </svg>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -306,6 +306,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
   });
 })();
 </script>
-<script src="site.js?v=20261123a" defer></script>
+<script src="site.js?v=20261123b" defer></script>
 </body>
 </html>
