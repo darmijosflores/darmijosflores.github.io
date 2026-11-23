@@ -1,5 +1,5 @@
 /* Estilos compartidos — marca Denisse Armijos
-   Fondo papel, negro para textos y bloques, un solo acento celeste.
+   Fondo papel, negro para textos y bloques, acento celeste y detalles en naranja.
    Títulos en Newsreader, textos e interfaz en IBM Plex Sans. */
 :root {
   --tinta: #111214;        /* negro: textos, logotipo, bloques */
@@ -7,6 +7,8 @@
   --senal: #4FA3D9;        /* celeste: acento */
   --senal-texto: #1D6A99;  /* celeste para textos pequeños sobre claro */
   --senal-claro: #7CC4EE;  /* celeste sobre fondo negro */
+  --naranja: #C2410C;      /* naranja: detalles (puntos finales y capa del logo) */
+  --naranja-claro: #E8692F;/* naranja sobre fondo negro */
   --senal-suave: #A9D8F2;  /* etiquetas pequeñas sobre fondo negro */
   --niebla: #DEDEDE;       /* líneas y bordes */
   --blanco: #FFFFFF;
@@ -38,8 +40,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .date svg { width: 18px; height: 18px; flex: none; }
 
 /* Isotipo e iconos: sus colores se controlan con variables */
-.mark { --d1: var(--senal); --d2: #CBE6F5; color: var(--tinta); }
-.mark.on-dark { --d1: var(--senal); --d2: #1E4A63; color: var(--papel); }
+.mark { --d1: var(--naranja); --d2: #CBE6F5; color: var(--tinta); }
+.mark.on-dark { --d1: var(--naranja-claro); --d2: #1E4A63; color: var(--papel); }
 .ico { width: 56px; height: 56px; flex: none; --ic-line: var(--tinta); --ic-fill: var(--senal); }
 
 /* Enlace con flecha */
@@ -88,7 +90,7 @@ nav.main a[aria-current] { color: var(--senal-texto); border-bottom-color: var(-
 .masthead .wrap { padding-block: 72px 88px; position: relative; }
 .masthead .kicker { display: block; margin-bottom: 18px; }
 .masthead h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 6vw, 76px); line-height: 1.02; letter-spacing: -.015em; margin: 0; max-width: 18ch; text-wrap: balance; }
-.masthead h1 .punto { color: var(--senal); }
+.masthead h1 .punto { color: var(--naranja); }
 .masthead .intro { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--texto-2); max-width: 58ch; margin: 24px 0 0; }
 .masthead .rule { position: absolute; left: var(--rule-left, 24px); right: 0; bottom: 0; height: 5px; background: var(--senal); }
 @media (min-width: 1228px) { .masthead .rule { --rule-left: calc((100vw - var(--max)) / 2 + 24px); } }
@@ -119,7 +121,7 @@ a.area:hover { border-color: var(--senal); transform: translateY(-2px); }
 .talk { background: var(--tinta); color: var(--papel); }
 .talk .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px 48px; padding-block: 56px; }
 .talk .btn { margin-left: auto; }
-.talk h2 .punto { color: var(--senal-claro); }
+.talk h2 .punto { color: var(--naranja-claro); }
 .talk h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1; letter-spacing: -.01em; margin: 0; }
 @media (max-width: 600px) { .talk .wrap { padding-block: 44px; } }
 

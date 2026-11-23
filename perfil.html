@@ -15,7 +15,7 @@
 <meta property="og:locale" content="es_EC">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="styles.css?v=20261123b">
+<link rel="stylesheet" href="styles.css?v=20261123c">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');</script>
@@ -50,8 +50,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 @media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
 .kicker { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
-.mark { --d1: var(--senal); --d2: #CBE6F5; color: var(--tinta); }
-.mark.on-dark { --d1: var(--senal); --d2: #1E4A63; color: var(--papel); }
+.mark { --d1: var(--naranja); --d2: #CBE6F5; color: var(--tinta); }
+.mark.on-dark { --d1: var(--naranja-claro); --d2: #1E4A63; color: var(--papel); }
 
 
 /* Portada de la biografía */
@@ -95,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 /* Trabajemos juntos */
 .cta { background: var(--blanco); border-top: 1px solid var(--niebla); border-bottom: 1px solid var(--niebla); }
 .cta .wrap { padding-block: 88px; }
-.cta h2 .punto { color: var(--senal); }
+.cta h2 .punto { color: var(--naranja); }
 .cta h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0 0 40px; max-width: 18ch; }
 .offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-bottom: 48px; }
 .offer { border-top: 2px solid var(--tinta); padding-top: 18px; display: grid; gap: 8px; align-content: start; }
@@ -133,7 +133,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo-d" viewBox="90 68 245 252">
     <path style="fill:var(--d2,#CBE6F5)" fill-rule="evenodd" transform="translate(24,-6)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
-    <path style="fill:var(--d1,#4FA3D9)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
+    <path style="fill:var(--d1,#C2410C)" fill-rule="evenodd" transform="translate(12,-3)" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
     <path fill="currentColor" fill-rule="evenodd" d="M122 83 H185 A113.5 113.5 0 0 1 185 310 H122 A22 22 0 0 1 100 288 V105 A22 22 0 0 1 122 83 Z M162 135 H190 A62 62 0 0 1 190 259 H162 A6 6 0 0 1 156 253 V141 A6 6 0 0 1 162 135 Z"/>
   </symbol>
   <symbol id="arrow" viewBox="0 0 28 14"><path d="M0 7h26M20 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
@@ -306,6 +306,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--senal); outline
   });
 })();
 </script>
-<script src="site.js?v=20261123b" defer></script>
+<script src="site.js?v=20261123c" defer></script>
 </body>
 </html>
