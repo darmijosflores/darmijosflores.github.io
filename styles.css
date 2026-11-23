@@ -1,17 +1,17 @@
 /* Estilos compartidos — marca Denisse Armijos
-   Fondo papel, azul tinta para textos y bloques, un solo acento naranja ladrillo.
+   Fondo papel, negro para textos y bloques, un solo acento naranja ladrillo.
    Títulos en Newsreader, textos e interfaz en IBM Plex Sans. */
 :root {
-  --tinta: #102A43;        /* azul: textos, logotipo, bloques */
+  --tinta: #111214;        /* negro: textos, logotipo, bloques */
   --papel: #F7F7F5;        /* fondos */
   --senal: #C2410C;        /* naranja ladrillo: acento */
   --senal-texto: #B23A0A;  /* naranja para textos pequeños sobre claro */
-  --senal-claro: #E8692F;  /* naranja sobre fondo azul */
-  --senal-suave: #F4A27A;  /* etiquetas pequeñas sobre fondo azul */
-  --niebla: #D9DEE3;       /* líneas y bordes */
+  --senal-claro: #E8692F;  /* naranja sobre fondo negro */
+  --senal-suave: #F4A27A;  /* etiquetas pequeñas sobre fondo negro */
+  --niebla: #DEDEDE;       /* líneas y bordes */
   --blanco: #FFFFFF;
-  --texto-2: #334E68;      /* texto secundario sobre claro */
-  --texto-azul-2: #BCCCDC; /* texto secundario sobre azul */
+  --texto-2: #4A4A50;      /* texto secundario sobre claro */
+  --texto-azul-2: #BDBDC2; /* texto secundario sobre negro */
 
   --display: "Newsreader", Georgia, "Times New Roman", serif;
   --body: "IBM Plex Sans", Arial, "Helvetica Neue", sans-serif;
